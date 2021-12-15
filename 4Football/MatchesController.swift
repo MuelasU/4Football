@@ -18,20 +18,18 @@ class MatchesController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Matches"
+        contentView.tableView.register(MatchTableViewCell.self, forCellReuseIdentifier: "cell")
     }
 }
 
 extension MatchesController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = contentView.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//        cell.textLabel?.text = "Hello world"
-        var config = cell.defaultContentConfiguration()
-        config.text = "Hello World"
-        cell.contentConfiguration = config
+        let cell = contentView.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MatchTableViewCell
+        cell.matchState = MatchState(rawValue: indexPath.row)
         return cell
     }
 }

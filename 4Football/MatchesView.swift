@@ -11,7 +11,6 @@ class MatchesView: UIView {
     let tableView: UITableView = {
         let view = UITableView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .red
         view.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return view
     }()
@@ -41,6 +40,7 @@ extension MatchesView: ViewCodable {
     }
     
     func configureViews() {
-        backgroundColor = .systemGray
+        tableView.backgroundColor = .systemGroupedBackground
+        backgroundColor = .systemGroupedBackground
     }
 }

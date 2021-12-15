@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F197538276A82040069107D /* UIStackView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F197537276A82040069107D /* UIStackView+Subviews.swift */; };
+		3F19753A276A8A440069107D /* MatchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F197539276A8A440069107D /* MatchState.swift */; };
+		3F19753C276AA3750069107D /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19753B276AA3750069107D /* UIColor+Custom.swift */; };
 		3F3AF6522767E66C005129CF /* MatchesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AF6512767E66C005129CF /* MatchesController.swift */; };
 		3F3AF6542767EDE0005129CF /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AF6532767EDE0005129CF /* ViewCode.swift */; };
 		3F3AF6562767F1B7005129CF /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AF6552767F1B7005129CF /* MatchesView.swift */; };
+		3FD6CE512769531D00D4B187 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6CE502769531D00D4B187 /* MatchTableViewCell.swift */; };
 		3FE53C032761529F00B594B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE53C022761529F00B594B5 /* AppDelegate.swift */; };
 		3FE53C052761529F00B594B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE53C042761529F00B594B5 /* SceneDelegate.swift */; };
 		3FE53C0C276152A100B594B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FE53C0B276152A100B594B5 /* Assets.xcassets */; };
@@ -17,9 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F197537276A82040069107D /* UIStackView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Subviews.swift"; sourceTree = "<group>"; };
+		3F197539276A8A440069107D /* MatchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchState.swift; sourceTree = "<group>"; };
+		3F19753B276AA3750069107D /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		3F3AF6512767E66C005129CF /* MatchesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesController.swift; sourceTree = "<group>"; };
 		3F3AF6532767EDE0005129CF /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		3F3AF6552767F1B7005129CF /* MatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
+		3FD6CE502769531D00D4B187 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
 		3FE53BFF2761529F00B594B5 /* 4Football.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 4Football.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE53C022761529F00B594B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FE53C042761529F00B594B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +66,7 @@
 		3FE53C012761529F00B594B5 /* 4Football */ = {
 			isa = PBXGroup;
 			children = (
+				3F197537276A82040069107D /* UIStackView+Subviews.swift */,
 				3F3AF6532767EDE0005129CF /* ViewCode.swift */,
 				3F3AF6512767E66C005129CF /* MatchesController.swift */,
 				3FE53C022761529F00B594B5 /* AppDelegate.swift */,
@@ -66,6 +75,9 @@
 				3FE53C0D276152A100B594B5 /* LaunchScreen.storyboard */,
 				3FE53C10276152A100B594B5 /* Info.plist */,
 				3F3AF6552767F1B7005129CF /* MatchesView.swift */,
+				3FD6CE502769531D00D4B187 /* MatchTableViewCell.swift */,
+				3F197539276A8A440069107D /* MatchState.swift */,
+				3F19753B276AA3750069107D /* UIColor+Custom.swift */,
 			);
 			path = 4Football;
 			sourceTree = "<group>";
@@ -141,6 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F3AF6522767E66C005129CF /* MatchesController.swift in Sources */,
+				3F19753A276A8A440069107D /* MatchState.swift in Sources */,
+				3F19753C276AA3750069107D /* UIColor+Custom.swift in Sources */,
+				3FD6CE512769531D00D4B187 /* MatchTableViewCell.swift in Sources */,
+				3F197538276A82040069107D /* UIStackView+Subviews.swift in Sources */,
 				3F3AF6562767F1B7005129CF /* MatchesView.swift in Sources */,
 				3FE53C032761529F00B594B5 /* AppDelegate.swift in Sources */,
 				3FE53C052761529F00B594B5 /* SceneDelegate.swift in Sources */,
