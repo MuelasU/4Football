@@ -9,9 +9,8 @@ import UIKit
 
 class MatchesView: UIView {
     let tableView: UITableView = {
-        let view = UITableView()
+        let view = UITableView(frame: .zero, style: .grouped)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return view
     }()
     
