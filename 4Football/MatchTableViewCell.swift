@@ -8,6 +8,13 @@
 import UIKit
 
 class MatchTableViewCell: UITableViewCell {
+    var match: Match? {
+        didSet {
+            hostTeamLabel.text = match?.teams.home.name
+            visitorTeamLabel.text = match?.teams.away.name
+        }
+    }
+    
     var matchState: MatchState? {
         didSet {
             if let matchState = matchState {
@@ -47,14 +54,12 @@ class MatchTableViewCell: UITableViewCell {
     
     private lazy var hostTeamLabel: UILabel = {
         let view = UILabel()
-        view.text = "Corinthians"
         view.font = .preferredFont(forTextStyle: .body)
         return view
     }()
     
     private lazy var visitorTeamLabel: UILabel = {
         let view = UILabel()
-        view.text = "Palmeiras"
         view.font = .preferredFont(forTextStyle: .body)
         return view
     }()

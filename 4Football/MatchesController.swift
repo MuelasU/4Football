@@ -9,6 +9,11 @@ import UIKit
 
 class MatchesController: UIViewController {
     var contentView: MatchesView = MatchesView()
+    var matches = [Match]() {
+        didSet {
+            contentView.tableView.reloadData()
+        }
+    }
     
     override func loadView() {
         contentView.tableView.dataSource = self
@@ -31,7 +36,7 @@ class MatchesController: UIViewController {
             case .failure(let error):
                 print(error.message)
             case .success(let matchesArray):
-                print(matchesArray)
+                self.matches = matchesArray
             }
         }
     }
@@ -39,7 +44,7 @@ class MatchesController: UIViewController {
 
 extension MatchesController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -48,17 +53,14 @@ extension MatchesController: UITableViewDataSource, UITableViewDelegate {
         return header
     }
     
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 40
-//    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return matches.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = contentView.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MatchTableViewCell
-        cell.matchState = MatchState(rawValue: indexPath.row)
+        cell.matchState = MatchState(rawValue: indexPath.row % 3)
+        cell.match = matches[indexPath.row]
         return cell
     }
 }
