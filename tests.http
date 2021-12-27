@@ -1,0 +1,13 @@
+GET https://v3.football.api-sports.io/fixtures
+    ?league=71
+    &date=2021-11-21
+    &season=2021
+x-rapidapi-key: 786e46f1d1aca9f7250b753a7d034154
+
+###
+
+GET https://v3.football.api-sports.io/fixtures
+    ?league=71
+    # &date=2021-11-21
+    # &season=2021
+x-rapidapi-key: 786e46f1d1aca9f7250b753a7d034154
