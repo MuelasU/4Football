@@ -9,6 +9,10 @@ import Foundation
 
 struct Match: Decodable {
     let teams: TeamsOfMatch
+    let goals: Score?
 }
 
-
+struct Score: Decodable {
+    let home: Int
+    let away: Int
+}

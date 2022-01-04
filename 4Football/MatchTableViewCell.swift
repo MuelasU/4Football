@@ -12,11 +12,16 @@ class MatchTableViewCell: UITableViewCell {
         didSet {
             if let match = match {
                 hostTeamLabel.text = match.teams.home.name
-                visitorTeamLabel.text = match.teams.away.name
+                hostScoreLabel.text = String(match.goals?.home ?? 0)
                 hostTeamImage.load(from: URL(string: match.teams.home.logoUrl),
                                    placeholder: UIImage(named: "brasao"))
+                
+                visitorTeamLabel.text = match.teams.away.name
+                visitorScoreLabel.text = String(match.goals?.away ?? 0)
                 visitorTeamImage.load(from: URL(string: match.teams.away.logoUrl),
                                    placeholder: UIImage(named: "brasao"))
+                
+                self.highlightWinner(from: match)
             }
         }
     }
@@ -72,14 +77,12 @@ class MatchTableViewCell: UITableViewCell {
     
     private lazy var hostScoreLabel: UILabel = {
         let view = UILabel()
-        view.text = String(7)
         view.font = .preferredFont(forTextStyle: .body)
         return view
     }()
     
     private lazy var visitorScoreLabel: UILabel = {
         let view = UILabel()
-        view.text = String(0)
         view.font = .preferredFont(forTextStyle: .body)
         return view
     }()
@@ -112,6 +115,20 @@ class MatchTableViewCell: UITableViewCell {
         view.contentMode = .scaleAspectFit
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
+    }
+    
+    private func highlightWinner(from match: Match) {
+        guard match.goals?.home != match.goals?.away else {
+            return
+        }
+        
+        [hostScoreLabel, hostTeamLabel].forEach { label in
+            label.font = .preferredFont(forTextStyle: (match.teams.home.winner! ? .headline : .body))
+        }
+        
+        [visitorScoreLabel, visitorTeamLabel].forEach { label in
+            label.font = .preferredFont(forTextStyle: (match.teams.away.winner! ? .headline : .body))
+        }
     }
 }
 
