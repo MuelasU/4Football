@@ -11,6 +11,7 @@
 		3F19753A276A8A440069107D /* MatchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F197539276A8A440069107D /* MatchState.swift */; };
 		3F19753C276AA3750069107D /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19753B276AA3750069107D /* UIColor+Custom.swift */; };
 		3F19753E276AE9530069107D /* MatchesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19753D276AE9530069107D /* MatchesHeaderView.swift */; };
+		3F298B0B277A875A00D4CCF4 /* UIImageView+loadURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F298B0A277A875A00D4CCF4 /* UIImageView+loadURL.swift */; };
 		3F3AF6522767E66C005129CF /* MatchesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AF6512767E66C005129CF /* MatchesController.swift */; };
 		3F3AF6542767EDE0005129CF /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AF6532767EDE0005129CF /* ViewCode.swift */; };
 		3F3AF6562767F1B7005129CF /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AF6552767F1B7005129CF /* MatchesView.swift */; };
@@ -34,6 +35,7 @@
 		3F197539276A8A440069107D /* MatchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchState.swift; sourceTree = "<group>"; };
 		3F19753B276AA3750069107D /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		3F19753D276AE9530069107D /* MatchesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesHeaderView.swift; sourceTree = "<group>"; };
+		3F298B0A277A875A00D4CCF4 /* UIImageView+loadURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadURL.swift"; sourceTree = "<group>"; };
 		3F3AF6512767E66C005129CF /* MatchesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesController.swift; sourceTree = "<group>"; };
 		3F3AF6532767EDE0005129CF /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		3F3AF6552767F1B7005129CF /* MatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				3F95464B2772947A00292491 /* Model */,
 				3F197537276A82040069107D /* UIStackView+Subviews.swift */,
+				3F298B0A277A875A00D4CCF4 /* UIImageView+loadURL.swift */,
 				3F3AF6532767EDE0005129CF /* ViewCode.swift */,
 				3F3AF6512767E66C005129CF /* MatchesController.swift */,
 				3FE53C022761529F00B594B5 /* AppDelegate.swift */,
@@ -231,6 +234,7 @@
 				3F3AF6562767F1B7005129CF /* MatchesView.swift in Sources */,
 				3FE53C032761529F00B594B5 /* AppDelegate.swift in Sources */,
 				3F89626627737ED2009D9345 /* Wrapper.swift in Sources */,
+				3F298B0B277A875A00D4CCF4 /* UIImageView+loadURL.swift in Sources */,
 				3F19753E276AE9530069107D /* MatchesHeaderView.swift in Sources */,
 				3FE53C052761529F00B594B5 /* SceneDelegate.swift in Sources */,
 				3F9546492772747D00292491 /* NetworkError.swift in Sources */,

@@ -10,8 +10,14 @@ import UIKit
 class MatchTableViewCell: UITableViewCell {
     var match: Match? {
         didSet {
-            hostTeamLabel.text = match?.teams.home.name
-            visitorTeamLabel.text = match?.teams.away.name
+            if let match = match {
+                hostTeamLabel.text = match.teams.home.name
+                visitorTeamLabel.text = match.teams.away.name
+                hostTeamImage.load(from: URL(string: match.teams.home.logoUrl),
+                                   placeholder: UIImage(named: "brasao"))
+                visitorTeamImage.load(from: URL(string: match.teams.away.logoUrl),
+                                   placeholder: UIImage(named: "brasao"))
+            }
         }
     }
     
@@ -78,17 +84,9 @@ class MatchTableViewCell: UITableViewCell {
         return view
     }()
     
-    private lazy var hostTeamImage: UIImageView = {
-        let view = UIImageView()
-        view.image = UIImage(named: "logocorinthians")
-        return view
-    }()
+    private lazy var hostTeamImage: UIImageView = createTeamImage()
     
-    private lazy var visitorTeamImage: UIImageView = {
-        let view = UIImageView()
-        view.image = UIImage(named: "logopalmeiras")
-        return view
-    }()
+    private lazy var visitorTeamImage: UIImageView = createTeamImage()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -105,6 +103,14 @@ class MatchTableViewCell: UITableViewCell {
         view.alignment = .center
         view.distribution = .fill
         view.spacing = 32
+        return view
+    }
+    
+    private func createTeamImage() -> UIImageView {
+        let view = UIImageView()
+//        view.frame.size = CGSize(width: 32, height: 32)
+        view.contentMode = .scaleAspectFit
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }
 }
@@ -134,7 +140,11 @@ extension MatchTableViewCell: ViewCodable {
             parentHStack.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             parentHStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
             parentHStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            parentHStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+            parentHStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            hostTeamImage.widthAnchor.constraint(equalToConstant: 32),
+            hostTeamImage.heightAnchor.constraint(equalToConstant: 32),
+            visitorTeamImage.widthAnchor.constraint(equalToConstant: 32),
+            visitorTeamImage.heightAnchor.constraint(equalToConstant: 32)
         ])
     }
     
