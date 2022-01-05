@@ -17,9 +17,13 @@ protocol APIRequest {
 
 extension APIRequest {
     func decode(_ data: Data) throws -> [ModelType] {
-        guard let wrapper = try? JSONDecoder().decode(Wrapper<ModelType>.self, from: data) else {
-            throw NetworkError.decodingError
-        }
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        
+        let wrapper = try decoder.decode(Wrapper<ModelType>.self, from: data)
+//        guard let wrapper = try? decoder.decode(Wrapper<ModelType>.self, from: data) else {
+//            throw NetworkError.decodingError
+//        }
         
         if let errors = wrapper.errors {
             throw NetworkError.emptyResponse(errors)

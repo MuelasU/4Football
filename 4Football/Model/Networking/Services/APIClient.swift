@@ -46,6 +46,7 @@ extension APIClient {
                         return
                     }
                 } catch {
+                    print(error)
                     DispatchQueue.main.async {
                         completion(.failure(error))
                         return

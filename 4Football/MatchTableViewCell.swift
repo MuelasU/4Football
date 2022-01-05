@@ -12,28 +12,20 @@ class MatchTableViewCell: UITableViewCell {
         didSet {
             if let match = match {
                 hostTeamLabel.text = match.teams.home.name
-                hostScoreLabel.text = String(match.goals?.home ?? 0)
+                hostScoreLabel.text = String(match.goals.home ?? 0)
                 hostTeamImage.load(from: URL(string: match.teams.home.logoUrl),
                                    placeholder: UIImage(named: "brasao"))
                 
                 visitorTeamLabel.text = match.teams.away.name
-                visitorScoreLabel.text = String(match.goals?.away ?? 0)
+                visitorScoreLabel.text = String(match.goals.away ?? 0)
                 visitorTeamImage.load(from: URL(string: match.teams.away.logoUrl),
                                    placeholder: UIImage(named: "brasao"))
                 
                 self.highlightWinner(from: match)
-            }
-        }
-    }
-    
-    var matchState: MatchState? {
-        didSet {
-            if let matchState = matchState {
-                let trailingView = matchState.trailingView
-                trailingView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-                parentHStack.addArrangedSubview(trailingView)
-                hostScoreLabel.isHidden = matchState.isScoreHidden
-                visitorScoreLabel.isHidden = matchState.isScoreHidden
+                [hostScoreLabel, visitorScoreLabel].forEach { label in
+                    label.isHidden = !match.fixture.status.hasScore
+                }
+                statusView.matchInfo = match.fixture
             }
         }
     }
@@ -91,6 +83,8 @@ class MatchTableViewCell: UITableViewCell {
     
     private lazy var visitorTeamImage: UIImageView = createTeamImage()
     
+    private lazy var statusView: MatchStatusView = MatchStatusView()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()
@@ -111,14 +105,13 @@ class MatchTableViewCell: UITableViewCell {
     
     private func createTeamImage() -> UIImageView {
         let view = UIImageView()
-//        view.frame.size = CGSize(width: 32, height: 32)
         view.contentMode = .scaleAspectFit
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }
     
     private func highlightWinner(from match: Match) {
-        guard match.goals?.home != match.goals?.away else {
+        guard match.goals.home != match.goals.away else {
             return
         }
         
@@ -148,6 +141,7 @@ extension MatchTableViewCell: ViewCodable {
                         visitorScoreLabel
                     ])
                 ]),
+                statusView
             ])
         )
     }
@@ -161,7 +155,8 @@ extension MatchTableViewCell: ViewCodable {
             hostTeamImage.widthAnchor.constraint(equalToConstant: 32),
             hostTeamImage.heightAnchor.constraint(equalToConstant: 32),
             visitorTeamImage.widthAnchor.constraint(equalToConstant: 32),
-            visitorTeamImage.heightAnchor.constraint(equalToConstant: 32)
+            visitorTeamImage.heightAnchor.constraint(equalToConstant: 32),
+            statusView.widthAnchor.constraint(equalToConstant: 48)
         ])
     }
     
@@ -175,5 +170,6 @@ extension MatchTableViewCell: ViewCodable {
         visitorScoreLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         hostScoreLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         teamsVStack.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        statusView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
     }
 }

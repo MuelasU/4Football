@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F197538276A82040069107D /* UIStackView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F197537276A82040069107D /* UIStackView+Subviews.swift */; };
-		3F19753A276A8A440069107D /* MatchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F197539276A8A440069107D /* MatchState.swift */; };
+		3F19753A276A8A440069107D /* MatchStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F197539276A8A440069107D /* MatchStatusView.swift */; };
 		3F19753C276AA3750069107D /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19753B276AA3750069107D /* UIColor+Custom.swift */; };
 		3F19753E276AE9530069107D /* MatchesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19753D276AE9530069107D /* MatchesHeaderView.swift */; };
 		3F298B0B277A875A00D4CCF4 /* UIImageView+loadURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F298B0A277A875A00D4CCF4 /* UIImageView+loadURL.swift */; };
@@ -32,7 +32,7 @@
 
 /* Begin PBXFileReference section */
 		3F197537276A82040069107D /* UIStackView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Subviews.swift"; sourceTree = "<group>"; };
-		3F197539276A8A440069107D /* MatchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchState.swift; sourceTree = "<group>"; };
+		3F197539276A8A440069107D /* MatchStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStatusView.swift; sourceTree = "<group>"; };
 		3F19753B276AA3750069107D /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		3F19753D276AE9530069107D /* MatchesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesHeaderView.swift; sourceTree = "<group>"; };
 		3F298B0A277A875A00D4CCF4 /* UIImageView+loadURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadURL.swift"; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 				3FE53C10276152A100B594B5 /* Info.plist */,
 				3F3AF6552767F1B7005129CF /* MatchesView.swift */,
 				3FD6CE502769531D00D4B187 /* MatchTableViewCell.swift */,
-				3F197539276A8A440069107D /* MatchState.swift */,
+				3F197539276A8A440069107D /* MatchStatusView.swift */,
 				3F19753B276AA3750069107D /* UIColor+Custom.swift */,
 				3F19753D276AE9530069107D /* MatchesHeaderView.swift */,
 			);
@@ -224,7 +224,7 @@
 			files = (
 				3F9546532772997800292491 /* GetMatches.swift in Sources */,
 				3F3AF6522767E66C005129CF /* MatchesController.swift in Sources */,
-				3F19753A276A8A440069107D /* MatchState.swift in Sources */,
+				3F19753A276A8A440069107D /* MatchStatusView.swift in Sources */,
 				3F19753C276AA3750069107D /* UIColor+Custom.swift in Sources */,
 				3F95464F2772959700292491 /* Team.swift in Sources */,
 				3FD6CE512769531D00D4B187 /* MatchTableViewCell.swift in Sources */,

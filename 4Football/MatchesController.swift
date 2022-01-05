@@ -28,9 +28,9 @@ class MatchesController: UIViewController {
         contentView.tableView.register(MatchesHeaderView.self, forHeaderFooterViewReuseIdentifier: "sectionHeader")
         
         //FIXME: - Rearranje it! Used only for testing
-        FootballAPIClient.shared.send(GetMatches(by: ["date":"2021-11-21",
-                                                      "season":"2021",
-                                                      "league":"71"])) { response in
+        FootballAPIClient.shared.send(GetMatches(by: ["date":"2022-01-05",
+                                                      "season":"2022",
+                                                      "league":"618"])) { response in
             
             switch response {
             case .failure(let error):
@@ -59,7 +59,6 @@ extension MatchesController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = contentView.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MatchTableViewCell
-        cell.matchState = MatchState(rawValue: indexPath.row % 3)
         cell.match = matches[indexPath.row]
         return cell
     }
