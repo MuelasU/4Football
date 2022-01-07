@@ -116,16 +116,12 @@ class MatchTableViewCell: UITableViewCell {
     }
     
     private func highlightWinner(from match: Match) {
-        guard match.goals.home != match.goals.away else {
-            return
-        }
-        
         [hostScoreLabel, hostTeamLabel].forEach { label in
-            label.font = .preferredFont(forTextStyle: (match.teams.home.winner! ? .headline : .body))
+            label.font = .preferredFont(forTextStyle: (match.teams.home.winner ?? false ? .headline : .body))
         }
         
         [visitorScoreLabel, visitorTeamLabel].forEach { label in
-            label.font = .preferredFont(forTextStyle: (match.teams.away.winner! ? .headline : .body))
+            label.font = .preferredFont(forTextStyle: (match.teams.away.winner ?? false ? .headline : .body))
         }
     }
 }
