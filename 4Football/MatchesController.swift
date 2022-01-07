@@ -31,7 +31,6 @@ class MatchesController: UIViewController {
         FootballAPIClient.shared.send(GetMatches(by: ["date":"2022-01-05",
                                                       "season":"2022",
                                                       "league":"618"])) { response in
-            
             switch response {
             case .failure(let error):
                 print(error.message)

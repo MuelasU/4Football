@@ -39,7 +39,7 @@ class MatchesHeaderView: UITableViewHeaderFooterView {
     private lazy var parentHStack: UIStackView = {
         let view = UIStackView()
         view.axis = .horizontal
-        view.spacing = 32
+        view.spacing = 24
         view.alignment = .center
         view.translatesAutoresizingMaskIntoConstraints = false
         return view

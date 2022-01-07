@@ -90,6 +90,11 @@ class MatchTableViewCell: UITableViewCell {
         setupViews()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        setupViews()
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -99,7 +104,7 @@ class MatchTableViewCell: UITableViewCell {
         view.axis = .horizontal
         view.alignment = .center
         view.distribution = .fill
-        view.spacing = 32
+        view.spacing = 24
         return view
     }
     
@@ -171,5 +176,8 @@ extension MatchTableViewCell: ViewCodable {
         hostScoreLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         teamsVStack.setContentHuggingPriority(.defaultLow, for: .horizontal)
         statusView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        
+        hostScoreLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        visitorScoreLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
     }
 }
