@@ -12,7 +12,6 @@ struct Team: Identifiable, Decodable {
     let id: Int
     let name: String
     let logoUrl: String
-//    var logo: UIImage? { get }
     let winner: Bool?
     
     enum CodingKeys: String, CodingKey {

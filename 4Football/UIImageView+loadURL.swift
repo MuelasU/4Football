@@ -7,19 +7,39 @@
 
 import UIKit
 
+extension UIImage {
+    static let cache = NSCache<NSString, UIImage>()
+}
+
 extension UIImageView {
-    func load(from url: URL?, placeholder: UIImage? = nil) {
-        if let placeholder = placeholder {
-            self.image = placeholder
-        }
-        
-        DispatchQueue.global().async { [weak self] in
+    private func download(from url: URL?, completion: @escaping  (UIImage) -> ()) {
+        DispatchQueue.global().async {
             if let url = url,
                 let data = try? Data(contentsOf: url),
                 let image = UIImage(data: data) {
                 DispatchQueue.main.async {
-                    self?.image = image
+                    completion(image)
                 }
+                
+                UIImage.cache.setObject(image, forKey: url.absoluteString as NSString)
+            }
+        }
+    }
+    
+    func load(from url: URL?, placeholder: UIImage? = nil) {
+        guard let url = url else {
+            return
+        }
+
+        if let cachedImage = UIImage.cache.object(forKey: url.absoluteString as NSString) {
+            self.image = cachedImage
+        } else {
+            if let placeholder = placeholder {
+                self.image = placeholder
+            }
+            
+            download(from: url) { downloadedImage in
+                self.image = downloadedImage
             }
         }
     }
