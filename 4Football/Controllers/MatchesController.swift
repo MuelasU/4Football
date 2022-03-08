@@ -62,7 +62,6 @@ extension MatchesController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = contentView.tableView.dequeueReusableHeaderFooterView(withIdentifier: "sectionHeader") as! MatchesHeaderView
-//        header.championship = "Campeonato Paulista"
         header.championship = sections[section].league
         return header
     }
