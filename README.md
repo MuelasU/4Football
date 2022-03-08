@@ -1,13 +1,3 @@
-# API codes
-
-- paulistao: 475
-- copinha: 618
-- carioca: 624
-- palmeiras: 121
-- corinthians: 131
-
----------------------
-
 #  Todo list
 
 - Fix championship image
