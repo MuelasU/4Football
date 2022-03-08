@@ -17,8 +17,8 @@ class MatchesController: UIViewController {
     var matches = [Match]() {
         didSet {
             for match in matches {
-                if var section = sections.first(where: { $0.league == match.league}) {
-                    section.matches.append(match)
+                if let sectionIndex = sections.firstIndex(where: { $0.league == match.league}) {
+                    sections[sectionIndex].matches.append(match)
                 } else {
                     sections.append(Section(league: match.league, matches: [match]))
                 }
