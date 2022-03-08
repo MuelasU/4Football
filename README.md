@@ -1,11 +1,11 @@
 #  Todo list
 
-- Fix championship image
 - Create halftime status view for MatchTableViewCell
 
 
 ## Last things done
 
+- Fix championship image
 - Update TableViewCellHeader accordingly
 
 

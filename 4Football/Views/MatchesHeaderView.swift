@@ -33,6 +33,8 @@ class MatchesHeaderView: UITableViewHeaderFooterView {
     
     private lazy var championshipImage: UIImageView = {
         let view = UIImageView()
+        view.contentMode = .scaleAspectFit
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -40,6 +42,7 @@ class MatchesHeaderView: UITableViewHeaderFooterView {
         let view = UIStackView()
         view.axis = .horizontal
         view.spacing = 24
+        view.distribution = .fill
         view.alignment = .center
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -52,6 +55,11 @@ class MatchesHeaderView: UITableViewHeaderFooterView {
         view.alignment = .leading
         return view
     }()
+    
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//        setupViews()
+//    }
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
@@ -81,7 +89,9 @@ extension MatchesHeaderView: ViewCodable {
             parentHStack.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor),
             parentHStack.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor),
             parentHStack.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
-            parentHStack.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor)
+            parentHStack.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
+            championshipImage.widthAnchor.constraint(equalToConstant: 36),
+            championshipImage.heightAnchor.constraint(equalToConstant: 36)
         ])
     }
 }
