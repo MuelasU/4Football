@@ -8,10 +8,12 @@
 import UIKit
 
 class MatchesHeaderView: UITableViewHeaderFooterView {
-    var championship: String? {
+    var championship: League? {
         didSet {
             if let championship = championship {
-                championshipLabel.text = championship
+                championshipLabel.text = championship.name
+                detailLabel.text = championship.round
+                championshipImage.load(from: URL(string: championship.logoUrl), placeholder: UIImage(named: "brasao"))
             }
         }
     }
@@ -26,13 +28,11 @@ class MatchesHeaderView: UITableViewHeaderFooterView {
         let view = UILabel()
         view.font = .preferredFont(forTextStyle: .caption1)
         view.textColor = .secondaryLabel
-        view.text = "Final | Jogo de volta"
         return view
     }()
     
     private lazy var championshipImage: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "paulistalogo")
         return view
     }()
     

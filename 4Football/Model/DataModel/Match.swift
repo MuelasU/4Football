@@ -10,6 +10,7 @@ import Foundation
 struct Match: Decodable {
     let teams: TeamsOfMatch
     let goals: Score
+    let league: League
     let fixture: MatchInfo
 }
 

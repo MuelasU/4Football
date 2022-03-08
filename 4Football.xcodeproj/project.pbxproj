@@ -15,6 +15,7 @@
 		3F3AF6522767E66C005129CF /* MatchesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AF6512767E66C005129CF /* MatchesController.swift */; };
 		3F3AF6542767EDE0005129CF /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AF6532767EDE0005129CF /* ViewCode.swift */; };
 		3F3AF6562767F1B7005129CF /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AF6552767F1B7005129CF /* MatchesView.swift */; };
+		3F4DF0C627D6C9BA008954A7 /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4DF0C527D6C9BA008954A7 /* League.swift */; };
 		3F89626627737ED2009D9345 /* Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F89626527737ED2009D9345 /* Wrapper.swift */; };
 		3F95464427726E6D00292491 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95464327726E6D00292491 /* APIClient.swift */; };
 		3F95464627726F3100292491 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95464527726F3100292491 /* APIRequest.swift */; };
@@ -39,6 +40,8 @@
 		3F3AF6512767E66C005129CF /* MatchesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesController.swift; sourceTree = "<group>"; };
 		3F3AF6532767EDE0005129CF /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		3F3AF6552767F1B7005129CF /* MatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
+		3F4DF0C027D6C43A008954A7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3F4DF0C527D6C9BA008954A7 /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
 		3F89626527737ED2009D9345 /* Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrapper.swift; sourceTree = "<group>"; };
 		3F95464327726E6D00292491 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		3F95464527726F3100292491 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
@@ -67,6 +70,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F4DF0C127D6C48C008954A7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3F19753B276AA3750069107D /* UIColor+Custom.swift */,
+				3F197537276A82040069107D /* UIStackView+Subviews.swift */,
+				3F298B0A277A875A00D4CCF4 /* UIImageView+loadURL.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3F4DF0C227D6C4B2008954A7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3F3AF6552767F1B7005129CF /* MatchesView.swift */,
+				3FD6CE502769531D00D4B187 /* MatchTableViewCell.swift */,
+				3F197539276A8A440069107D /* MatchStatusView.swift */,
+				3F19753D276AE9530069107D /* MatchesHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3F4DF0C327D6C530008954A7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F3AF6512767E66C005129CF /* MatchesController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3F4DF0C427D6C931008954A7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3F3AF6532767EDE0005129CF /* ViewCode.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		3F95464727726F7D00292491 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +123,7 @@
 				3F95464C2772949500292491 /* Match.swift */,
 				3F95464E2772959700292491 /* Team.swift */,
 				3F89626527737ED2009D9345 /* Wrapper.swift */,
+				3F4DF0C527D6C9BA008954A7 /* League.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -117,6 +158,7 @@
 		3FE53BF62761529F00B594B5 = {
 			isa = PBXGroup;
 			children = (
+				3F4DF0C027D6C43A008954A7 /* README.md */,
 				3FE53C012761529F00B594B5 /* 4Football */,
 				3FE53C002761529F00B594B5 /* Products */,
 			);
@@ -133,21 +175,16 @@
 		3FE53C012761529F00B594B5 /* 4Football */ = {
 			isa = PBXGroup;
 			children = (
+				3F4DF0C427D6C931008954A7 /* Services */,
+				3F4DF0C327D6C530008954A7 /* Controllers */,
+				3F4DF0C227D6C4B2008954A7 /* Views */,
 				3F95464B2772947A00292491 /* Model */,
-				3F197537276A82040069107D /* UIStackView+Subviews.swift */,
-				3F298B0A277A875A00D4CCF4 /* UIImageView+loadURL.swift */,
-				3F3AF6532767EDE0005129CF /* ViewCode.swift */,
-				3F3AF6512767E66C005129CF /* MatchesController.swift */,
+				3F4DF0C127D6C48C008954A7 /* Extensions */,
 				3FE53C022761529F00B594B5 /* AppDelegate.swift */,
 				3FE53C042761529F00B594B5 /* SceneDelegate.swift */,
 				3FE53C0B276152A100B594B5 /* Assets.xcassets */,
 				3FE53C0D276152A100B594B5 /* LaunchScreen.storyboard */,
 				3FE53C10276152A100B594B5 /* Info.plist */,
-				3F3AF6552767F1B7005129CF /* MatchesView.swift */,
-				3FD6CE502769531D00D4B187 /* MatchTableViewCell.swift */,
-				3F197539276A8A440069107D /* MatchStatusView.swift */,
-				3F19753B276AA3750069107D /* UIColor+Custom.swift */,
-				3F19753D276AE9530069107D /* MatchesHeaderView.swift */,
 			);
 			path = 4Football;
 			sourceTree = "<group>";
@@ -240,6 +277,7 @@
 				3F9546492772747D00292491 /* NetworkError.swift in Sources */,
 				3F95464627726F3100292491 /* APIRequest.swift in Sources */,
 				3F3AF6542767EDE0005129CF /* ViewCode.swift in Sources */,
+				3F4DF0C627D6C9BA008954A7 /* League.swift in Sources */,
 				3F95464D2772949500292491 /* Match.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
