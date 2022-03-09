@@ -41,10 +41,9 @@ class MatchesController: UIViewController {
         contentView.tableView.register(MatchesHeaderView.self, forHeaderFooterViewReuseIdentifier: "sectionHeader")
         
         //FIXME: - Rearranje it! Used only for testing
-        FootballAPIClient.shared.send(GetMatches(by: ["season":"2022",
-                                                      "team":"121",
-                                                      "from":"2022-02-10",
-                                                      "to":"2022-03-05"])) { response in
+        FootballAPIClient.shared.send(GetMatches(by: ["date":"2022-03-08",
+                                                      "season":"2021",
+                                                      "league":"2"])) { response in
             switch response {
             case .failure(let error):
                 print(error.message)

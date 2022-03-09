@@ -14,6 +14,7 @@ class MatchesHeaderView: UITableViewHeaderFooterView {
                 championshipLabel.text = championship.name
                 detailLabel.text = championship.round
                 championshipImage.load(from: URL(string: championship.logoUrl), placeholder: UIImage(named: "brasao"))
+                accessibilityLabel = "\(championshipLabel.text!), \(detailLabel.text!)"
             }
         }
     }
@@ -93,5 +94,10 @@ extension MatchesHeaderView: ViewCodable {
             championshipImage.widthAnchor.constraint(equalToConstant: 36),
             championshipImage.heightAnchor.constraint(equalToConstant: 36)
         ])
+    }
+    
+    func applyAccessibility() {
+        isAccessibilityElement = true
+        shouldGroupAccessibilityChildren = true
     }
 }

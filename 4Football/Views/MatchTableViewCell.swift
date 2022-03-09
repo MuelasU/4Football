@@ -176,4 +176,8 @@ extension MatchTableViewCell: ViewCodable {
         hostScoreLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         visitorScoreLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
     }
+    
+    func applyAccessibility() {
+        accessibilityTraits.insert(.button)
+    }
 }
