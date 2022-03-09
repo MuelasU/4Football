@@ -36,7 +36,7 @@ class MatchesController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Matches"
+        navigationItem.title = "Matches"
         contentView.tableView.register(MatchTableViewCell.self, forCellReuseIdentifier: "cell")
         contentView.tableView.register(MatchesHeaderView.self, forHeaderFooterViewReuseIdentifier: "sectionHeader")
         
@@ -73,5 +73,10 @@ extension MatchesController: UITableViewDataSource, UITableViewDelegate {
         let cell = contentView.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MatchTableViewCell
         cell.match = sections[indexPath.section].matches[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let match = sections[indexPath.section].matches[indexPath.row]
+        navigationController?.pushViewController(MatchOverviewController(match: match), animated: true)
     }
 }
