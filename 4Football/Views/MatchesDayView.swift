@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MatchesView: UIView {
+class MatchesDayView: UIView {
     let tableView: UITableView = {
         let view = UITableView(frame: .zero, style: .grouped)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -24,7 +24,7 @@ class MatchesView: UIView {
     }
 }
 
-extension MatchesView: ViewCodable {
+extension MatchesDayView: ViewCodable {
     func buildHierarchy() {
         addSubview(tableView)
     }
@@ -36,10 +36,5 @@ extension MatchesView: ViewCodable {
             tableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor)
         ])
-    }
-    
-    func configureViews() {
-        tableView.backgroundColor = .systemGroupedBackground
-        backgroundColor = .systemGroupedBackground
     }
 }

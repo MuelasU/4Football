@@ -1,6 +1,6 @@
 import UIKit
 
-class MatchOverviewController: UIViewController {
+class MatchOverviewViewController: UIViewController {
     let contentView: MatchOverviewView
     let match: Match
     

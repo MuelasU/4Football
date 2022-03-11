@@ -1,8 +1,8 @@
 //
-//  MatchesViewController.swift
+//  ViewController.swift
 //  4Football
 //
-//  Created by Gabriel Muelas on 13/12/21.
+//  Created by Gabriel Muelas on 09/03/22.
 //
 
 import UIKit
@@ -12,8 +12,21 @@ fileprivate struct Section {
     var matches: [Match]
 }
 
-class MatchesController: UIViewController {
-    var contentView: MatchesView = MatchesView()
+// gonna be the content
+class MatchesDayViewController: UIViewController {
+
+    let day: Date
+    
+    init(day: Date) {
+        self.day = day
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Data
     var matches = [Match]() {
         didSet {
             for match in matches {
@@ -26,7 +39,11 @@ class MatchesController: UIViewController {
             contentView.tableView.reloadData()
         }
     }
+    
     private var sections = [Section]()
+    
+    // MARK: - View
+    var contentView: MatchesDayView = MatchesDayView()
     
     override func loadView() {
         contentView.tableView.dataSource = self
@@ -36,7 +53,8 @@ class MatchesController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Matches"
+        
+        // QUESTION: Can it be in loadView?
         contentView.tableView.register(MatchTableViewCell.self, forCellReuseIdentifier: "cell")
         contentView.tableView.register(MatchesHeaderView.self, forHeaderFooterViewReuseIdentifier: "sectionHeader")
         
@@ -51,10 +69,11 @@ class MatchesController: UIViewController {
                 self.matches = matchesArray
             }
         }
+
     }
 }
 
-extension MatchesController: UITableViewDataSource, UITableViewDelegate {
+extension MatchesDayViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
@@ -77,6 +96,6 @@ extension MatchesController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let match = sections[indexPath.section].matches[indexPath.row]
-        navigationController?.pushViewController(MatchOverviewController(match: match), animated: true)
+        navigationController?.pushViewController(MatchOverviewViewController(match: match), animated: true)
     }
 }
