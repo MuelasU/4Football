@@ -1,38 +1,55 @@
-//
-//  MatchesViewController.swift
-//  4Football
-//
-//  Created by Gabriel Muelas on 13/12/21.
-//
-
 import UIKit
+import Combine
 
-class MatchesContainerViewController: UIViewController, UIViewControllerContainer {
+class MatchesContainerViewController: UIViewController {
     
-    var day: Date = .now
+    // MARK: - Observer Pattern
+    private var displayedDay: Date
     
-    private lazy var matchesPageViewController: MatchesPageViewController = MatchesPageViewController()
-    private lazy var pageControlViewController: PageControlViewController = PageControlViewController()
-    
-    override func loadView() {
-        let matchesPageViewController = addChildViewController(viewController: matchesPageViewController)
-        let pageControlViewController = addChildViewController(viewController: pageControlViewController)
-        view = MatchesContainerView(
-            matchesPageView: matchesPageViewController.view,
-            pageControlView: pageControlViewController.view
-        )
+    private lazy var selectedDayChanged: (Date, AnyObject) -> Void =  { newDay, sender in
+        self.displayedDay = newDay
+        if type(of: sender) == MatchesPageViewController.self {
+            self.dayPickerViewController.updateView(with: self.displayedDay)
+        } else if type(of: sender) == DayPickerViewController.self {
+            self.matchesPageViewController.updateView(with: self.displayedDay)
+        }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // MARK: - Childs
+    private lazy var matchesPageViewController: MatchesPageViewController = .init(
+        firstDay: displayedDay,
+        update: selectedDayChanged
+    )
+    
+    private lazy var dayPickerViewController: DayPickerViewController = .init(
+        firstDay: displayedDay,
+        update: selectedDayChanged
+    )
+    
+    // MARK: - View
+    override func loadView() {
+        let matchesPageViewController = addChildAndNotify(viewController: matchesPageViewController)
+        let dayPickerViewController = addChildAndNotify(viewController: dayPickerViewController)
+        view = MatchesContainerView(
+            matchesPageView: matchesPageViewController.view,
+            dayPickerView: dayPickerViewController.view
+        )
         navigationItem.title = "Matches"
+    }
+    
+    // MARK: - Init
+    init(firstDay displayedDay: Date = .now) {
+        self.displayedDay = displayedDay
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
-protocol UIViewControllerContainer: UIViewController {}
-
-extension UIViewControllerContainer {
-    func addChildViewController(viewController child: UIViewController) -> UIViewController {
+extension UIViewController {
+    func addChildAndNotify(viewController child: UIViewController) -> UIViewController {
         addChild(child)
         child.didMove(toParent: self)
         return child

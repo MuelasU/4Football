@@ -1,20 +1,13 @@
-//
-//  MatchesContainerView.swift
-//  4Football
-//
-//  Created by Gabriel Muelas on 11/03/22.
-//
-
 import UIKit
 
 class MatchesContainerView: UIView {
 
     private let matchesPageView: UIView
-    private let pageControlView: UIView
+    private let dayPickerView: UIView
     
-    init(matchesPageView: UIView, pageControlView: UIView) {
+    init(matchesPageView: UIView, dayPickerView: UIView) {
         self.matchesPageView = matchesPageView
-        self.pageControlView = pageControlView
+        self.dayPickerView = dayPickerView
         super.init(frame: .zero)
         setupViews()
     }
@@ -22,23 +15,22 @@ class MatchesContainerView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 extension MatchesContainerView: ViewCodable {
     func buildHierarchy() {
-        addSubview(pageControlView)
+        addSubview(dayPickerView)
         addSubview(matchesPageView)
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            pageControlView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            pageControlView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            pageControlView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            pageControlView.heightAnchor.constraint(equalToConstant: 30),
+            dayPickerView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            dayPickerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            dayPickerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+//            dayPickerView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1),
             
-            matchesPageView.topAnchor.constraint(equalTo: pageControlView.bottomAnchor),
+            matchesPageView.topAnchor.constraint(equalTo: dayPickerView.bottomAnchor),
             matchesPageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             matchesPageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             matchesPageView.bottomAnchor.constraint(equalTo: bottomAnchor)
@@ -46,10 +38,9 @@ extension MatchesContainerView: ViewCodable {
     }
     
     func configureViews() {
-        pageControlView.translatesAutoresizingMaskIntoConstraints = false
+        dayPickerView.translatesAutoresizingMaskIntoConstraints = false
         matchesPageView.translatesAutoresizingMaskIntoConstraints = false
         
         backgroundColor = .systemGroupedBackground
-        pageControlView.backgroundColor = .cyan
     }
 }

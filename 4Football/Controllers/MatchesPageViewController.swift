@@ -9,26 +9,29 @@ import UIKit
 
 class MatchesPageViewController: UIPageViewController {
     
-    private var displayedDay: Date = .now
+    private let updateHandler: (Date, AnyObject) -> Void
     
-    init() {
+    // MARK: - Init
+    init(firstDay: Date, update handler: @escaping (Date, AnyObject) -> Void) {
+        self.updateHandler = handler
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal)
-        let initialViewController = createMatchesDayViewController(for: displayedDay)
+        let initialViewController = createMatchesDayViewController(for: firstDay)
         setViewControllers([initialViewController], direction: .forward, animated: true, completion: nil)
+        delegate = self
+        dataSource = self
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        delegate = self
-        dataSource = self
+    // MARK: - Functions
+    func updateView(with newDay: Date) {
+        let newViewController = createMatchesDayViewController(for: newDay)
+        setViewControllers([newViewController], direction: .forward, animated: true)
     }
     
-    func createMatchesDayViewController(for date: Date) -> MatchesDayViewController {
+    private func createMatchesDayViewController(for date: Date) -> MatchesDayViewController {
         return MatchesDayViewController(day: date)
     }
 }
@@ -55,7 +58,7 @@ extension MatchesPageViewController: UIPageViewControllerDelegate, UIPageViewCon
                 return
             }
             
-            displayedDay = displayedViewController.day
+            updateHandler(displayedViewController.day, self)
         }
     }
 }
