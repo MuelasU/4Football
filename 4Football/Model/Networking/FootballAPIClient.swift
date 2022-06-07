@@ -17,7 +17,7 @@ class FootballAPIClient: APIClient {
         return client
     }()
     
-    init(url: String) {
+    private init(url: String) {
         self.baseUrl = url
     }
 }

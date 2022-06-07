@@ -87,17 +87,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3F0F1C3127DED807000694F0 /* Matches */ = {
-			isa = PBXGroup;
-			children = (
-				3F9CBBCF27DB7CF400C1E779 /* MatchesContainerView.swift */,
-				3F0F1C3227DED850000694F0 /* TableView */,
-				3F3AF6552767F1B7005129CF /* MatchesDayView.swift */,
-				3F237EFB27D8E1EB004AA000 /* MatchOverviewView.swift */,
-			);
-			name = Matches;
-			sourceTree = "<group>";
-		};
 		3F0F1C3227DED850000694F0 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +95,7 @@
 				3F197539276A8A440069107D /* MatchStatusView.swift */,
 			);
 			name = TableView;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		3F4DF0C127D6C48C008954A7 /* Extensions */ = {
@@ -117,27 +107,6 @@
 				3FCE4DAF27D9817400449A3E /* Date.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		3F4DF0C227D6C4B2008954A7 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				3F0B385027EB57E100B01B02 /* DayPickerCollectionViewCell.swift */,
-				3F0F1C3127DED807000694F0 /* Matches */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		3F4DF0C327D6C530008954A7 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				3F0F1C2F27DE7F50000694F0 /* DayPickerViewController.swift */,
-				3F3AF6512767E66C005129CF /* MatchesContainerViewController.swift */,
-				3F237EF927D8DF68004AA000 /* MatchOverviewViewController.swift */,
-				3FCE4DAB27D974EF00449A3E /* MatchesPageViewController.swift */,
-				3FCE4DAD27D9758F00449A3E /* MatchesDayViewController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		3F4DF0C427D6C931008954A7 /* Services */ = {
@@ -196,6 +165,55 @@
 			path = Requests;
 			sourceTree = "<group>";
 		};
+		3FB6FBCE284F7BDA00E1FA87 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				3FB6FBD1284F7C3100E1FA87 /* MatchesContainer */,
+				3FB6FBD0284F7C2100E1FA87 /* MatchOverview */,
+				3FB6FBCF284F7C0800E1FA87 /* MatchesDay */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		3FB6FBCF284F7C0800E1FA87 /* MatchesDay */ = {
+			isa = PBXGroup;
+			children = (
+				3F0F1C3227DED850000694F0 /* TableView */,
+				3F3AF6552767F1B7005129CF /* MatchesDayView.swift */,
+				3FCE4DAD27D9758F00449A3E /* MatchesDayViewController.swift */,
+			);
+			path = MatchesDay;
+			sourceTree = "<group>";
+		};
+		3FB6FBD0284F7C2100E1FA87 /* MatchOverview */ = {
+			isa = PBXGroup;
+			children = (
+				3F237EFB27D8E1EB004AA000 /* MatchOverviewView.swift */,
+				3F237EF927D8DF68004AA000 /* MatchOverviewViewController.swift */,
+			);
+			path = MatchOverview;
+			sourceTree = "<group>";
+		};
+		3FB6FBD1284F7C3100E1FA87 /* MatchesContainer */ = {
+			isa = PBXGroup;
+			children = (
+				3FB6FBD2284F7CA500E1FA87 /* DayPicker */,
+				3F9CBBCF27DB7CF400C1E779 /* MatchesContainerView.swift */,
+				3F3AF6512767E66C005129CF /* MatchesContainerViewController.swift */,
+				3FCE4DAB27D974EF00449A3E /* MatchesPageViewController.swift */,
+			);
+			path = MatchesContainer;
+			sourceTree = "<group>";
+		};
+		3FB6FBD2284F7CA500E1FA87 /* DayPicker */ = {
+			isa = PBXGroup;
+			children = (
+				3F0B385027EB57E100B01B02 /* DayPickerCollectionViewCell.swift */,
+				3F0F1C2F27DE7F50000694F0 /* DayPickerViewController.swift */,
+			);
+			path = DayPicker;
+			sourceTree = "<group>";
+		};
 		3FE53BF62761529F00B594B5 = {
 			isa = PBXGroup;
 			children = (
@@ -217,9 +235,8 @@
 		3FE53C012761529F00B594B5 /* 4Football */ = {
 			isa = PBXGroup;
 			children = (
+				3FB6FBCE284F7BDA00E1FA87 /* Scenes */,
 				3F4DF0C427D6C931008954A7 /* Services */,
-				3F4DF0C327D6C530008954A7 /* Controllers */,
-				3F4DF0C227D6C4B2008954A7 /* Views */,
 				3F95464B2772947A00292491 /* Model */,
 				3F4DF0C127D6C48C008954A7 /* Extensions */,
 				3FE53C022761529F00B594B5 /* AppDelegate.swift */,

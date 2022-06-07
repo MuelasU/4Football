@@ -3,7 +3,7 @@ import Combine
 
 class MatchesContainerViewController: UIViewController {
     
-    // MARK: - Observer Pattern
+    // MARK: - Data
     private var displayedDay: Date
     
     private lazy var selectedDayChanged: (Date, AnyObject) -> Void =  { newDay, sender in

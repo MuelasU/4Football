@@ -1,5 +1,9 @@
 #  Todo list
 
+- Get matches from day
+
+Details:
+
 - Create halftime status view for MatchTableViewCell
 - Update view when matches status change
 - Embed API token-key into env variables
@@ -15,6 +19,14 @@
 - Fix championship image
 - Update TableViewCellHeader accordingly
 
+## Items to review
 
-### Check this
+- DayPicker component
+- Networking layer
+- Error handling
+
+### WWDC22
+
+- Live action widget in lock screen
+- App Intents
 

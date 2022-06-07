@@ -28,6 +28,7 @@ class DayPickerViewController: UICollectionViewController {
         self.updateHandler = handler
         self.firstDay = firstDay
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
+        // TODO: - Extract count constant to config file
         loadDays(count: 30, from: firstDay)
     }
     
