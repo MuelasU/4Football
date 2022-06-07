@@ -6,3 +6,5 @@
 - palmeiras: 121
 - corinthians: 131
 - champions: 2
+- brasileirão: 71
+- timezone: "America/Belem"

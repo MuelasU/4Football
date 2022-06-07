@@ -1,6 +1,7 @@
 #  Todo list
 
-- Get matches from day
+- Onboarding / UserDefaults
+- Review match view cell on live game
 
 Details:
 
@@ -10,6 +11,7 @@ Details:
 
 ## Last things done
 
+- Get matches from day
 - Fix DayPickerController
 - Create a DayPickerController, but still fixes
 - Make de structure for pagination of matches

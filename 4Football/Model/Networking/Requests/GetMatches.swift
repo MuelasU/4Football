@@ -16,4 +16,10 @@ struct GetMatches: APIRequest {
     init(by filters: [String : String]? = nil) {
         queries = filters
     }
+    
+    init(by filters: [Query]? = nil) {
+        var queries : [String : String] = [:]
+        filters?.forEach { queries[$0.key] = $0.value }
+        self.queries = queries.isEmpty ? nil : queries
+    }
 }

@@ -42,6 +42,21 @@ class MatchesDayViewController: UIViewController {
     
     private var sections = [Section]()
     
+    private func getData() {
+        let season = GenericQuery(key: "season", value: "2022")
+        let league = GenericQuery(key: "league", value: "71")
+        let timezone = GenericQuery(key: "timezone", value: "America/Belem")
+        let request = GetMatches(by: [day, season, league, timezone])
+        FootballAPIClient.shared.send(request) { response in
+            switch response {
+            case .failure(let error):
+                print(error.message)
+            case .success(let matchesArray):
+                self.matches = matchesArray
+            }
+        }
+    }
+    
     // MARK: - View
     var contentView: MatchesDayView = MatchesDayView()
     
@@ -58,18 +73,7 @@ class MatchesDayViewController: UIViewController {
         contentView.tableView.register(MatchTableViewCell.self, forCellReuseIdentifier: "cell")
         contentView.tableView.register(MatchesHeaderView.self, forHeaderFooterViewReuseIdentifier: "sectionHeader")
         
-        //FIXME: - Rearranje it! Used only for testing
-        FootballAPIClient.shared.send(GetMatches(by: ["date":"2022-03-08",
-                                                      "season":"2021",
-                                                      "league":"2"])) { response in
-            switch response {
-            case .failure(let error):
-                print(error.message)
-            case .success(let matchesArray):
-                self.matches = matchesArray
-            }
-        }
-
+        getData()
     }
 }
 
