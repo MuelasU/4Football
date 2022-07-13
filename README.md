@@ -1,6 +1,7 @@
 #  Todo list
 
-- Onboarding / UserDefaults
+- Sync walkthrough progress view
+- Onboarding / UserDefaults     -     DOING
 - Review match view cell on live game
 
 Details:
