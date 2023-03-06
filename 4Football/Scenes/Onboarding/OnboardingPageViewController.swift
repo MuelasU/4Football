@@ -12,8 +12,8 @@ class OnboardingPageViewController: UIPageViewController {
     private var currentIndex: Int = 0
     
     private lazy var steps: [StepViewController] = [
-        SupportStepViewController(),
         WelcomeStepViewController(),
+        SupportStepViewController(),
         NotificationStepViewController()
         // Insert new steps
     ]

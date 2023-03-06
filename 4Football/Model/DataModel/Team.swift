@@ -13,9 +13,10 @@ struct Team: Identifiable, Decodable, Item {
     let name: String
     let imageUrl: String?
     let winner: Bool?
+    let national: Bool?
     
     enum CodingKeys: String, CodingKey {
-        case id, name, winner
+        case id, name, winner, national
         case imageUrl = "logo"
     }
 }
@@ -23,4 +24,8 @@ struct Team: Identifiable, Decodable, Item {
 struct TeamsOfMatch: Decodable {
     let home: Team
     let away: Team
+}
+
+struct TeamWrapper: Decodable {
+    let team: Team
 }

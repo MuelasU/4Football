@@ -43,8 +43,8 @@ class MatchesDayViewController: UIViewController {
     private var sections = [Section]()
     
     private func getData() {
-        let season = GenericQuery(key: "season", value: "2022")
-        let league = GenericQuery(key: "league", value: "71")
+        let season = GenericQuery(key: "season", value: "2023")
+        let league = GenericQuery(key: "league", value: "475")
         let timezone = GenericQuery(key: "timezone", value: "America/Belem")
         let request = GetMatches(by: [day, season, league, timezone])
         FootballAPIClient.shared.send(request) { response in

@@ -8,24 +8,27 @@
 import UIKit
 
 class Picker: UIStackView {
-    var title: String {
+    var picked: Item? = nil {
         didSet {
-            label.text = title
-        }
-    }
-    var iconUrl: String? {
-        didSet {
-            if let iconUrl {
-                image.load(from: URL(string: iconUrl))
+            if let picked {
+                label.text = picked.name
+                if let url = picked.imageUrl {
+                    image.load(from: URL(string: url))
+                }
+            }
+            else {
+                label.text = text
+                image.image = iconPlaceholder
             }
         }
     }
-    var iconPlaceholder: UIImage
-    
-    //PAREI AQUI
+
+    let text: String
+    let iconPlaceholder: UIImage
+
     private lazy var label: UILabel = {
         let label = UILabel()
-        label.text = title
+        label.text = text
         label.font = .preferredFont(forTextStyle: .body)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -41,8 +44,8 @@ class Picker: UIStackView {
         return imageView
     }()
     
-    init(title: String, iconPlaceholder: UIImage, target: Any?, action: Selector?) {
-        self.title = title
+    init(text: String, iconPlaceholder: UIImage, target: Any?, action: Selector?) {
+        self.text = text
         self.iconPlaceholder = iconPlaceholder
         
         super.init(frame: .zero)
@@ -63,5 +66,9 @@ class Picker: UIStackView {
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func clear() {
+        picked = nil
     }
 }

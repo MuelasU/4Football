@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F07A4F929B6638700DEDD65 /* GetTeams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F07A4F829B6638700DEDD65 /* GetTeams.swift */; };
+		3F07A4FB29B66C1900DEDD65 /* Country+Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F07A4FA29B66C1900DEDD65 /* Country+Query.swift */; };
 		3F0AC2E628D543D40061BC3B /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0AC2E528D543D40061BC3B /* SelectionViewController.swift */; };
 		3F0AC2E828D545F80061BC3B /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0AC2E728D545F80061BC3B /* Country.swift */; };
 		3F0AC2EA28D547A60061BC3B /* GetCountries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0AC2E928D547A60061BC3B /* GetCountries.swift */; };
@@ -59,6 +61,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F07A4F829B6638700DEDD65 /* GetTeams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTeams.swift; sourceTree = "<group>"; };
+		3F07A4FA29B66C1900DEDD65 /* Country+Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+Query.swift"; sourceTree = "<group>"; };
 		3F0AC2E528D543D40061BC3B /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		3F0AC2E728D545F80061BC3B /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		3F0AC2E928D547A60061BC3B /* GetCountries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountries.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				3FB6FBD3284F88DF00E1FA87 /* Queries */,
+				3F07A4F829B6638700DEDD65 /* GetTeams.swift */,
 				3F9546522772997800292491 /* GetMatches.swift */,
 				3F0AC2E928D547A60061BC3B /* GetCountries.swift */,
 			);
@@ -271,8 +276,9 @@
 		3FB6FBD3284F88DF00E1FA87 /* Queries */ = {
 			isa = PBXGroup;
 			children = (
-				3FB6FBD4284F88FB00E1FA87 /* Date+Query.swift */,
 				3FB6FBD6284F892E00E1FA87 /* Query.swift */,
+				3F07A4FA29B66C1900DEDD65 /* Country+Query.swift */,
+				3FB6FBD4284F88FB00E1FA87 /* Date+Query.swift */,
 			);
 			path = Queries;
 			sourceTree = "<group>";
@@ -434,6 +440,7 @@
 				3F0AC2E628D543D40061BC3B /* SelectionViewController.swift in Sources */,
 				3FCE4DB027D9817400449A3E /* Date.swift in Sources */,
 				3FB6FBD7284F892E00E1FA87 /* Query.swift in Sources */,
+				3F07A4F929B6638700DEDD65 /* GetTeams.swift in Sources */,
 				3FCE4DAE27D9758F00449A3E /* MatchesDayViewController.swift in Sources */,
 				3FD6CE512769531D00D4B187 /* MatchTableViewCell.swift in Sources */,
 				3F95465527729C1D00292491 /* FootballAPIClient.swift in Sources */,
@@ -444,6 +451,7 @@
 				3F9CBBD027DB7CF400C1E779 /* MatchesContainerView.swift in Sources */,
 				3F9BF97E287F965300C69B43 /* StepViewController.swift in Sources */,
 				3F3AF6562767F1B7005129CF /* MatchesDayView.swift in Sources */,
+				3F07A4FB29B66C1900DEDD65 /* Country+Query.swift in Sources */,
 				3FE53C032761529F00B594B5 /* AppDelegate.swift in Sources */,
 				3F5B6AE8285C118300172416 /* SupportStepViewController.swift in Sources */,
 				3F9A86CB28BCFC530052ECD6 /* Picker.swift in Sources */,
