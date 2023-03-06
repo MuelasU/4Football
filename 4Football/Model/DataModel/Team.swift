@@ -8,15 +8,15 @@
 import Foundation
 import UIKit
 
-struct Team: Identifiable, Decodable {
+struct Team: Identifiable, Decodable, Item {
     let id: Int
     let name: String
-    let logoUrl: String
+    let imageUrl: String?
     let winner: Bool?
     
     enum CodingKeys: String, CodingKey {
         case id, name, winner
-        case logoUrl = "logo"
+        case imageUrl = "logo"
     }
 }
 

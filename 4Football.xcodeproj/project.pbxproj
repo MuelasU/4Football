@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0AC2E628D543D40061BC3B /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0AC2E528D543D40061BC3B /* SelectionViewController.swift */; };
+		3F0AC2E828D545F80061BC3B /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0AC2E728D545F80061BC3B /* Country.swift */; };
+		3F0AC2EA28D547A60061BC3B /* GetCountries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0AC2E928D547A60061BC3B /* GetCountries.swift */; };
 		3F0B385127EB57E100B01B02 /* DayPickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0B385027EB57E100B01B02 /* DayPickerCollectionViewCell.swift */; };
 		3F0F1C3027DE7F50000694F0 /* DayPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F1C2F27DE7F50000694F0 /* DayPickerViewController.swift */; };
 		3F197538276A82040069107D /* UIStackView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F197537276A82040069107D /* UIStackView+Subviews.swift */; };
@@ -19,6 +22,9 @@
 		3F3AF6522767E66C005129CF /* MatchesContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AF6512767E66C005129CF /* MatchesContainerViewController.swift */; };
 		3F3AF6542767EDE0005129CF /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AF6532767EDE0005129CF /* ViewCode.swift */; };
 		3F3AF6562767F1B7005129CF /* MatchesDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AF6552767F1B7005129CF /* MatchesDayView.swift */; };
+		3F4DDAE228D66E92001E7872 /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4DDAE128D66E92001E7872 /* SelectionView.swift */; };
+		3F4DDAE428D66EA1001E7872 /* SelectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4DDAE328D66EA1001E7872 /* SelectionViewCell.swift */; };
+		3F4DDAE628D66F15001E7872 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4DDAE528D66F15001E7872 /* Protocols.swift */; };
 		3F4DF0C627D6C9BA008954A7 /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4DF0C527D6C9BA008954A7 /* League.swift */; };
 		3F5B6AE6285C0E9D00172416 /* WelcomeStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5B6AE5285C0E9D00172416 /* WelcomeStepViewController.swift */; };
 		3F5B6AE8285C118300172416 /* SupportStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5B6AE7285C118300172416 /* SupportStepViewController.swift */; };
@@ -30,6 +36,9 @@
 		3F95464F2772959700292491 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95464E2772959700292491 /* Team.swift */; };
 		3F9546532772997800292491 /* GetMatches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9546522772997800292491 /* GetMatches.swift */; };
 		3F95465527729C1D00292491 /* FootballAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95465427729C1D00292491 /* FootballAPIClient.swift */; };
+		3F9A86CB28BCFC530052ECD6 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9A86CA28BCFC530052ECD6 /* Picker.swift */; };
+		3F9BF97C287F92B300C69B43 /* UIFont+Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9BF97B287F92B300C69B43 /* UIFont+Weight.swift */; };
+		3F9BF97E287F965300C69B43 /* StepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9BF97D287F965300C69B43 /* StepViewController.swift */; };
 		3F9CBBD027DB7CF400C1E779 /* MatchesContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9CBBCF27DB7CF400C1E779 /* MatchesContainerView.swift */; };
 		3F9EDADA287F6A8D0002EC55 /* NotificationStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9EDAD9287F6A8D0002EC55 /* NotificationStepViewController.swift */; };
 		3FB6FBD5284F88FB00E1FA87 /* Date+Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6FBD4284F88FB00E1FA87 /* Date+Query.swift */; };
@@ -50,6 +59,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F0AC2E528D543D40061BC3B /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
+		3F0AC2E728D545F80061BC3B /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		3F0AC2E928D547A60061BC3B /* GetCountries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCountries.swift; sourceTree = "<group>"; };
 		3F0B385027EB57E100B01B02 /* DayPickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		3F0F1C2F27DE7F50000694F0 /* DayPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPickerViewController.swift; sourceTree = "<group>"; };
 		3F197537276A82040069107D /* UIStackView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Subviews.swift"; sourceTree = "<group>"; };
@@ -62,6 +74,9 @@
 		3F3AF6512767E66C005129CF /* MatchesContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesContainerViewController.swift; sourceTree = "<group>"; };
 		3F3AF6532767EDE0005129CF /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		3F3AF6552767F1B7005129CF /* MatchesDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesDayView.swift; sourceTree = "<group>"; };
+		3F4DDAE128D66E92001E7872 /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
+		3F4DDAE328D66EA1001E7872 /* SelectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewCell.swift; sourceTree = "<group>"; };
+		3F4DDAE528D66F15001E7872 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		3F4DF0C027D6C43A008954A7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3F4DF0C527D6C9BA008954A7 /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
 		3F5B6AE5285C0E9D00172416 /* WelcomeStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeStepViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +89,9 @@
 		3F95464E2772959700292491 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		3F9546522772997800292491 /* GetMatches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMatches.swift; sourceTree = "<group>"; };
 		3F95465427729C1D00292491 /* FootballAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballAPIClient.swift; sourceTree = "<group>"; };
+		3F9A86CA28BCFC530052ECD6 /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
+		3F9BF97B287F92B300C69B43 /* UIFont+Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Weight.swift"; sourceTree = "<group>"; };
+		3F9BF97D287F965300C69B43 /* StepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepViewController.swift; sourceTree = "<group>"; };
 		3F9CBBCF27DB7CF400C1E779 /* MatchesContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesContainerView.swift; sourceTree = "<group>"; };
 		3F9EDAD9287F6A8D0002EC55 /* NotificationStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStepViewController.swift; sourceTree = "<group>"; };
 		3FB6FBD4284F88FB00E1FA87 /* Date+Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Query.swift"; sourceTree = "<group>"; };
@@ -118,6 +136,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		3F4DDAE028D66E7E001E7872 /* Selection */ = {
+			isa = PBXGroup;
+			children = (
+				3F0AC2E528D543D40061BC3B /* SelectionViewController.swift */,
+				3F4DDAE128D66E92001E7872 /* SelectionView.swift */,
+				3F4DDAE328D66EA1001E7872 /* SelectionViewCell.swift */,
+			);
+			path = Selection;
+			sourceTree = "<group>";
+		};
 		3F4DF0C127D6C48C008954A7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +153,7 @@
 				3F197537276A82040069107D /* UIStackView+Subviews.swift */,
 				3F298B0A277A875A00D4CCF4 /* UIImageView+loadURL.swift */,
 				3FCE4DAF27D9817400449A3E /* Date.swift */,
+				3F9BF97B287F92B300C69B43 /* UIFont+Weight.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -154,6 +183,8 @@
 				3F95464E2772959700292491 /* Team.swift */,
 				3F89626527737ED2009D9345 /* Wrapper.swift */,
 				3F4DF0C527D6C9BA008954A7 /* League.swift */,
+				3F0AC2E728D545F80061BC3B /* Country.swift */,
+				3F4DDAE528D66F15001E7872 /* Protocols.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -182,6 +213,7 @@
 			children = (
 				3FB6FBD3284F88DF00E1FA87 /* Queries */,
 				3F9546522772997800292491 /* GetMatches.swift */,
+				3F0AC2E928D547A60061BC3B /* GetCountries.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -248,6 +280,7 @@
 		3FCC000A285367C70030BCDB /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				3F4DDAE028D66E7E001E7872 /* Selection */,
 				3FCC001128537F4B0030BCDB /* Steps */,
 				3FCC0012285388FF0030BCDB /* OnboardingButtonsViewController.swift */,
 				3FCC000B28536B660030BCDB /* OnboardingContainerViewController.swift */,
@@ -263,6 +296,7 @@
 				3F5B6AE5285C0E9D00172416 /* WelcomeStepViewController.swift */,
 				3F5B6AE7285C118300172416 /* SupportStepViewController.swift */,
 				3F9EDAD9287F6A8D0002EC55 /* NotificationStepViewController.swift */,
+				3F9BF97D287F965300C69B43 /* StepViewController.swift */,
 			);
 			path = Steps;
 			sourceTree = "<group>";
@@ -271,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				3FCC0015285389420030BCDB /* Button.swift */,
+				3F9A86CA28BCFC530052ECD6 /* Picker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -386,6 +421,7 @@
 				3F237EFC27D8E1EB004AA000 /* MatchOverviewView.swift in Sources */,
 				3FCC000C28536B660030BCDB /* OnboardingContainerViewController.swift in Sources */,
 				3F3AF6522767E66C005129CF /* MatchesContainerViewController.swift in Sources */,
+				3F4DDAE628D66F15001E7872 /* Protocols.swift in Sources */,
 				3F19753A276A8A440069107D /* MatchStatusView.swift in Sources */,
 				3FB6FBD5284F88FB00E1FA87 /* Date+Query.swift in Sources */,
 				3F19753C276AA3750069107D /* UIColor+Custom.swift in Sources */,
@@ -393,21 +429,29 @@
 				3F0F1C3027DE7F50000694F0 /* DayPickerViewController.swift in Sources */,
 				3F9EDADA287F6A8D0002EC55 /* NotificationStepViewController.swift in Sources */,
 				3FCC001028536BBE0030BCDB /* OnboardingPageViewController.swift in Sources */,
+				3F0AC2E828D545F80061BC3B /* Country.swift in Sources */,
+				3F4DDAE228D66E92001E7872 /* SelectionView.swift in Sources */,
+				3F0AC2E628D543D40061BC3B /* SelectionViewController.swift in Sources */,
 				3FCE4DB027D9817400449A3E /* Date.swift in Sources */,
 				3FB6FBD7284F892E00E1FA87 /* Query.swift in Sources */,
 				3FCE4DAE27D9758F00449A3E /* MatchesDayViewController.swift in Sources */,
 				3FD6CE512769531D00D4B187 /* MatchTableViewCell.swift in Sources */,
 				3F95465527729C1D00292491 /* FootballAPIClient.swift in Sources */,
 				3F5B6AE6285C0E9D00172416 /* WelcomeStepViewController.swift in Sources */,
+				3F0AC2EA28D547A60061BC3B /* GetCountries.swift in Sources */,
 				3F197538276A82040069107D /* UIStackView+Subviews.swift in Sources */,
 				3F95464427726E6D00292491 /* APIClient.swift in Sources */,
 				3F9CBBD027DB7CF400C1E779 /* MatchesContainerView.swift in Sources */,
+				3F9BF97E287F965300C69B43 /* StepViewController.swift in Sources */,
 				3F3AF6562767F1B7005129CF /* MatchesDayView.swift in Sources */,
 				3FE53C032761529F00B594B5 /* AppDelegate.swift in Sources */,
 				3F5B6AE8285C118300172416 /* SupportStepViewController.swift in Sources */,
+				3F9A86CB28BCFC530052ECD6 /* Picker.swift in Sources */,
+				3F9BF97C287F92B300C69B43 /* UIFont+Weight.swift in Sources */,
 				3F89626627737ED2009D9345 /* Wrapper.swift in Sources */,
 				3F298B0B277A875A00D4CCF4 /* UIImageView+loadURL.swift in Sources */,
 				3F19753E276AE9530069107D /* MatchesHeaderView.swift in Sources */,
+				3F4DDAE428D66EA1001E7872 /* SelectionViewCell.swift in Sources */,
 				3FCE4DAC27D974EF00449A3E /* MatchesPageViewController.swift in Sources */,
 				3FCC0013285388FF0030BCDB /* OnboardingButtonsViewController.swift in Sources */,
 				3FCC000E28536B9F0030BCDB /* WalkthroughProgressView.swift in Sources */,

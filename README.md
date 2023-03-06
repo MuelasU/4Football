@@ -1,11 +1,13 @@
 #  Todo list
 
-- Sync walkthrough progress view
+- Adjust styling of onboarding
+- Features from onboarding
 - Onboarding / UserDefaults     -     DOING
 - Review match view cell on live game
 
 Details:
 
+- Sync walkthrough progress view
 - Create halftime status view for MatchTableViewCell
 - Update view when matches status change
 - Embed API token-key into env variables
@@ -25,7 +27,7 @@ Details:
 ## Items to review
 
 - DayPicker component
-- Networking layer
+- *Networking layer*
 - Error handling
 
 ### WWDC22

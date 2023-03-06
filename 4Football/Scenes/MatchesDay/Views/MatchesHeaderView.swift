@@ -13,7 +13,7 @@ class MatchesHeaderView: UITableViewHeaderFooterView {
             if let championship = championship {
                 championshipLabel.text = championship.name
                 detailLabel.text = championship.round
-                championshipImage.load(from: URL(string: championship.logoUrl), placeholder: UIImage(named: "brasao"))
+                championshipImage.load(from: URL(string: championship.imageUrl!), placeholder: UIImage(named: "brasao"))
                 accessibilityLabel = "\(championshipLabel.text!), \(detailLabel.text!)"
             }
         }

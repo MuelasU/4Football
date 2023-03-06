@@ -13,12 +13,12 @@ class MatchTableViewCell: UITableViewCell {
             if let match = match {
                 hostTeamLabel.text = match.teams.home.name
                 hostScoreLabel.text = String(match.goals.home ?? 0)
-                hostTeamImage.load(from: URL(string: match.teams.home.logoUrl),
+                hostTeamImage.load(from: URL(string: match.teams.home.imageUrl!),
                                    placeholder: UIImage(named: "brasao"))
                 
                 visitorTeamLabel.text = match.teams.away.name
                 visitorScoreLabel.text = String(match.goals.away ?? 0)
-                visitorTeamImage.load(from: URL(string: match.teams.away.logoUrl),
+                visitorTeamImage.load(from: URL(string: match.teams.away.imageUrl!),
                                    placeholder: UIImage(named: "brasao"))
                 
                 self.highlightWinner(from: match)
