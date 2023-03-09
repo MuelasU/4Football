@@ -10,7 +10,7 @@ import UIKit
 class OnboardingPageViewController: UIPageViewController {
 
     private var currentIndex: Int = 0
-    
+
     private lazy var steps: [StepViewController] = [
         WelcomeStepViewController(),
         SupportStepViewController(),

@@ -1,10 +1,3 @@
-//
-//  SupportStepViewController.swift
-//  4Football
-//
-//  Created by Gabriel Muelas on 16/06/22.
-//
-
 import UIKit
 
 class SupportStepViewController: StepViewController {
@@ -27,6 +20,7 @@ class SupportStepViewController: StepViewController {
             if let selectedCountry {
                 countryPicker.picked = selectedCountry
                 getTeams(from: selectedCountry)
+                UserSession.shared.nationality = selectedCountry
             }
         }
     }
@@ -35,6 +29,7 @@ class SupportStepViewController: StepViewController {
         didSet {
             if let selectedTeam {
                 teamPicker.picked = selectedTeam
+                UserSession.shared.club = selectedTeam
             }
         }
     }
