@@ -15,17 +15,25 @@ protocol OnboardingButtonsViewControllerDelegate: UIViewController {
 class OnboardingButtonsViewController: UIViewController {
 
     weak var delegate: OnboardingButtonsViewControllerDelegate?
-    
-    private lazy var buttons: [Button] = {
-        let buttonContinue = Button(title: "Continue")
-        buttonContinue.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
-        let buttonPrevious = Button(title: "Previous")
-        buttonPrevious.addTarget(self, action: #selector(previousPage), for: .touchUpInside)
-        return [buttonPrevious, buttonContinue]
-    }()
-    
+
+    let previousButton: Button
+    let continueButton: Button
+
+    init() {
+        previousButton = Button(title: "Previous", type: .back)
+        continueButton = Button(title: "Continue", type: .next)
+        super.init(nibName: nil, bundle: nil)
+
+        previousButton.addTarget(self, action: #selector(previousPage), for: .touchUpInside)
+        continueButton.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     private lazy var stackView: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: buttons)
+        let stack = UIStackView(arrangedSubviews: [previousButton, continueButton])
         stack.axis = .horizontal
         stack.distribution = .equalSpacing
         stack.translatesAutoresizingMaskIntoConstraints = false

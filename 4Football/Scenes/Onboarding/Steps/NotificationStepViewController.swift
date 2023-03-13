@@ -7,14 +7,14 @@
 
 import UIKit
 
-class NotificationStepViewController: StepViewController {
+class NotificationStepViewController: UIViewController, OnboardingStep {
+    var type: StepType { .notifications }
 
-    override var headingText: String {
-        "Notifications"
-    }
-    
-    override var paragraphText: String {
-        "teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste"
-    }
+    var headingText: String { "Notifications" }
 
+    var paragraphText: String { "teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste" }
+
+    override func loadView() {
+        view = stepView
+    }
 }

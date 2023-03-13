@@ -17,7 +17,7 @@ class SelectionView: UIView, ViewCodable {
     
     lazy var searchBar: UISearchBar = {
         let bar = UISearchBar()
-        bar.placeholder = "Search a country"
+        bar.placeholder = "Search"
         bar.translatesAutoresizingMaskIntoConstraints = false
         bar.backgroundImage = UIImage()
         return bar

@@ -19,13 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-//        window?.rootViewController =
-//        window?.rootViewController =
-        if UserSession.shared.isFirstTime {
-            window?.rootViewController = OnboardingContainerViewController()
-        } else {
-            window?.rootViewController = UINavigationController(rootViewController: MatchesContainerViewController())
-        }
+        let appCoordinator = AppCoordinator()
+        window?.rootViewController = appCoordinator.rootViewController
+        appCoordinator.start()
         window?.makeKeyAndVisible()
     }
 

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct Country: Decodable, Item, Equatable {
+struct Country: Codable, Item, Equatable {
     let name: String
     let code: String?
     var imageUrl: String? {

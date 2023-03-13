@@ -9,6 +9,7 @@ import UIKit
 
 class OnboardingContainerViewController: UIViewController {
     static private let numSteps = 3
+    var didFinishOnboarding: (() -> Void)?
 
     // MARK: - Childs
     private lazy var onboardingPageViewController: OnboardingPageViewController = .init()
@@ -28,8 +29,24 @@ class OnboardingContainerViewController: UIViewController {
         
         setupConstraints()
         view.backgroundColor = .systemBackground
+        onboardingButtonsViewController.previousButton.hide()
         
         onboardingButtonsViewController.delegate = self
+        setupUserSession()
+    }
+
+    private func setupUserSession() {
+        if let support = onboardingPageViewController.steps.first(where: { $0.type == StepType.support }) as? SupportStepViewController {
+            support.didFinishSelections = { country, team in
+                UserSession.shared.club = team
+                UserSession.shared.nationality = country
+                self.onboardingButtonsViewController.continueButton.enable()
+            }
+        }
+        onboardingPageViewController.didFinishOnboarding = {
+            UserSession.shared.isUserDefined = true
+            self.didFinishOnboarding?()
+        }
     }
     
     private func setupConstraints() {
@@ -58,11 +75,33 @@ extension OnboardingContainerViewController: OnboardingButtonsViewControllerDele
     
     func didPushNext() {
         let stepIndex = onboardingPageViewController.nextStep()
+        guard stepIndex > 0 else {
+            return
+        }
         walkthroughProgressView.update(with: stepIndex)
+        checkButtonsBy(step: StepType(rawValue: stepIndex)!)
     }
     
     func didPushPrevious() {
         let stepIndex = onboardingPageViewController.previousStep()
         walkthroughProgressView.update(with: stepIndex)
+        checkButtonsBy(step: StepType(rawValue: stepIndex)!)
+    }
+
+    private func checkButtonsBy(step: StepType) {
+        switch step {
+        case .welcome:
+            onboardingButtonsViewController.previousButton.hide()
+            onboardingButtonsViewController.continueButton.enable()
+        case .support:
+            onboardingButtonsViewController.previousButton.show()
+            if UserSession.shared.nationality != nil && UserSession.shared.club != nil {
+                onboardingButtonsViewController.continueButton.disable()
+            } else {
+                onboardingButtonsViewController.continueButton.enable()
+            }
+        default:
+            break
+        }
     }
 }

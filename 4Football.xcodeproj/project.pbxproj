@@ -41,7 +41,7 @@
 		3F95465527729C1D00292491 /* FootballAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95465427729C1D00292491 /* FootballAPIClient.swift */; };
 		3F9A86CB28BCFC530052ECD6 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9A86CA28BCFC530052ECD6 /* Picker.swift */; };
 		3F9BF97C287F92B300C69B43 /* UIFont+Weight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9BF97B287F92B300C69B43 /* UIFont+Weight.swift */; };
-		3F9BF97E287F965300C69B43 /* StepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9BF97D287F965300C69B43 /* StepViewController.swift */; };
+		3F9BF97E287F965300C69B43 /* OnboardingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9BF97D287F965300C69B43 /* OnboardingStep.swift */; };
 		3F9CBBD027DB7CF400C1E779 /* MatchesContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9CBBCF27DB7CF400C1E779 /* MatchesContainerView.swift */; };
 		3F9EDADA287F6A8D0002EC55 /* NotificationStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9EDAD9287F6A8D0002EC55 /* NotificationStepViewController.swift */; };
 		3FB6FBD5284F88FB00E1FA87 /* Date+Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6FBD4284F88FB00E1FA87 /* Date+Query.swift */; };
@@ -55,6 +55,7 @@
 		3FCE4DAE27D9758F00449A3E /* MatchesDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCE4DAD27D9758F00449A3E /* MatchesDayViewController.swift */; };
 		3FCE4DB027D9817400449A3E /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCE4DAF27D9817400449A3E /* Date.swift */; };
 		3FD6CE512769531D00D4B187 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6CE502769531D00D4B187 /* MatchTableViewCell.swift */; };
+		3FE05F7729BAA0E0007F5C75 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE05F7629BAA0E0007F5C75 /* AppCoordinator.swift */; };
 		3FE53C032761529F00B594B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE53C022761529F00B594B5 /* AppDelegate.swift */; };
 		3FE53C052761529F00B594B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE53C042761529F00B594B5 /* SceneDelegate.swift */; };
 		3FE53C0C276152A100B594B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FE53C0B276152A100B594B5 /* Assets.xcassets */; };
@@ -97,7 +98,7 @@
 		3F95465427729C1D00292491 /* FootballAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballAPIClient.swift; sourceTree = "<group>"; };
 		3F9A86CA28BCFC530052ECD6 /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
 		3F9BF97B287F92B300C69B43 /* UIFont+Weight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Weight.swift"; sourceTree = "<group>"; };
-		3F9BF97D287F965300C69B43 /* StepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepViewController.swift; sourceTree = "<group>"; };
+		3F9BF97D287F965300C69B43 /* OnboardingStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStep.swift; sourceTree = "<group>"; };
 		3F9CBBCF27DB7CF400C1E779 /* MatchesContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesContainerView.swift; sourceTree = "<group>"; };
 		3F9EDAD9287F6A8D0002EC55 /* NotificationStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStepViewController.swift; sourceTree = "<group>"; };
 		3FB6FBD4284F88FB00E1FA87 /* Date+Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Query.swift"; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 		3FCE4DAF27D9817400449A3E /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		3FCEFF2927D797B4007A0F3C /* API.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = API.md; sourceTree = "<group>"; };
 		3FD6CE502769531D00D4B187 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
+		3FE05F7629BAA0E0007F5C75 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		3FE53BFF2761529F00B594B5 /* 4Football.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 4Football.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE53C022761529F00B594B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FE53C042761529F00B594B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -305,7 +307,7 @@
 				3F5B6AE5285C0E9D00172416 /* WelcomeStepViewController.swift */,
 				3F5B6AE7285C118300172416 /* SupportStepViewController.swift */,
 				3F9EDAD9287F6A8D0002EC55 /* NotificationStepViewController.swift */,
-				3F9BF97D287F965300C69B43 /* StepViewController.swift */,
+				3F9BF97D287F965300C69B43 /* OnboardingStep.swift */,
 			);
 			path = Steps;
 			sourceTree = "<group>";
@@ -350,6 +352,7 @@
 				3FE53C0B276152A100B594B5 /* Assets.xcassets */,
 				3FE53C0D276152A100B594B5 /* LaunchScreen.storyboard */,
 				3FE53C10276152A100B594B5 /* Info.plist */,
+				3FE05F7629BAA0E0007F5C75 /* AppCoordinator.swift */,
 			);
 			path = 4Football;
 			sourceTree = "<group>";
@@ -452,7 +455,7 @@
 				3F197538276A82040069107D /* UIStackView+Subviews.swift in Sources */,
 				3F95464427726E6D00292491 /* APIClient.swift in Sources */,
 				3F9CBBD027DB7CF400C1E779 /* MatchesContainerView.swift in Sources */,
-				3F9BF97E287F965300C69B43 /* StepViewController.swift in Sources */,
+				3F9BF97E287F965300C69B43 /* OnboardingStep.swift in Sources */,
 				3F3AF6562767F1B7005129CF /* MatchesDayView.swift in Sources */,
 				3F07A4FB29B66C1900DEDD65 /* Country+Query.swift in Sources */,
 				3F3D486629B8F08600A00A15 /* UserSession.swift in Sources */,
@@ -460,6 +463,7 @@
 				3F5B6AE8285C118300172416 /* SupportStepViewController.swift in Sources */,
 				3F9A86CB28BCFC530052ECD6 /* Picker.swift in Sources */,
 				3F9BF97C287F92B300C69B43 /* UIFont+Weight.swift in Sources */,
+				3FE05F7729BAA0E0007F5C75 /* AppCoordinator.swift in Sources */,
 				3F89626627737ED2009D9345 /* Wrapper.swift in Sources */,
 				3F298B0B277A875A00D4CCF4 /* UIImageView+loadURL.swift in Sources */,
 				3F19753E276AE9530069107D /* MatchesHeaderView.swift in Sources */,

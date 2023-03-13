@@ -7,9 +7,14 @@
 
 import UIKit
 
-class WelcomeStepViewController: StepViewController {
+class WelcomeStepViewController: UIViewController, OnboardingStep {
+    var type: StepType { .welcome }
 
-    override var headingText: String { "Welcome" }
-    override var paragraphText: String { "teste teste teste teste teste teste teste teste teste teste teste" }
+    var headingText: String { "Welcome" }
 
+    var paragraphText: String { "teste teste teste teste teste teste teste teste teste teste teste" }
+
+    override func loadView() {
+        view = stepView
+    }
 }

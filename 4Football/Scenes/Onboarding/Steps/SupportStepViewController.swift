@@ -1,7 +1,19 @@
 import UIKit
 
-class SupportStepViewController: StepViewController {
-    
+class SupportStepViewController: UIViewController, OnboardingStep {
+    var type: StepType { .support }
+    var headingText: String { "Support" }
+    var paragraphText: String { "teste teste teste teste teste teste teste teste teste" }
+    var child: UIView {
+        let stack = UIStackView(arrangedSubviews: [countryPicker, teamPicker, UIView()])
+        stack.axis = .vertical
+        stack.alignment = .fill
+        stack.distribution = .fill
+        stack.spacing = 16
+        stack.setContentHuggingPriority(.defaultLow, for: .vertical)
+        return stack
+    }
+
     private var countries = [Country]() {
         didSet {
             // TODO: too slow
@@ -15,12 +27,13 @@ class SupportStepViewController: StepViewController {
         }
     }
 
+    var didFinishSelections: ((Country, Team) -> Void)?
+
     private var selectedCountry: Country? = nil {
         didSet {
             if let selectedCountry {
                 countryPicker.picked = selectedCountry
                 getTeams(from: selectedCountry)
-                UserSession.shared.nationality = selectedCountry
             }
         }
     }
@@ -29,13 +42,10 @@ class SupportStepViewController: StepViewController {
         didSet {
             if let selectedTeam {
                 teamPicker.picked = selectedTeam
-                UserSession.shared.club = selectedTeam
+                didFinishSelections?(selectedCountry!, selectedTeam)
             }
         }
     }
-    
-    override var headingText: String { "Support" }
-    override var paragraphText: String { "teste teste teste teste teste teste teste teste teste" }
 
     private lazy var countryPicker: Picker = .init(
         text: "Select your national team",
@@ -51,14 +61,8 @@ class SupportStepViewController: StepViewController {
         action: #selector(showTeamVC)
     )
 
-    override var child: UIView {
-        let stack = UIStackView(arrangedSubviews: [countryPicker, teamPicker, UIView()])
-        stack.axis = .vertical
-        stack.alignment = .fill
-        stack.distribution = .fill
-        stack.spacing = 16
-        stack.setContentHuggingPriority(.defaultLow, for: .vertical)
-        return stack
+    override func loadView() {
+        view = stepView
     }
     
     override func viewDidLoad() {

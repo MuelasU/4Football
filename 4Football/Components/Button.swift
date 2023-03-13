@@ -8,8 +8,14 @@
 import UIKit
 
 class Button: UIButton {
+    enum ButtonType {
+        case back, next
+    }
 
-    init(title: String) {
+    let type: ButtonType
+
+    init(title: String, type: Button.ButtonType) {
+        self.type = type
         super.init(frame: .zero)
         setTitle(title, for: .normal)
         setTitleColor(.white, for: .normal)
@@ -31,4 +37,23 @@ class Button: UIButton {
         )
     }
 
+    func disable() {
+        isEnabled = false
+        backgroundColor = .quaternaryLabel
+    }
+
+    func enable() {
+        isEnabled = true
+        backgroundColor = .oceanic
+    }
+
+    func hide() {
+        layer.opacity = 0
+        isEnabled = false
+    }
+
+    func show() {
+        layer.opacity = 1
+        isEnabled = true
+    }
 }

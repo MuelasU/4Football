@@ -8,10 +8,11 @@
 import UIKit
 
 class OnboardingPageViewController: UIPageViewController {
-
     private var currentIndex: Int = 0
 
-    private lazy var steps: [StepViewController] = [
+    var didFinishOnboarding: (() -> Void)?
+
+    lazy var steps: [OnboardingStep] = [
         WelcomeStepViewController(),
         SupportStepViewController(),
         NotificationStepViewController()
@@ -26,9 +27,12 @@ class OnboardingPageViewController: UIPageViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func nextStep() -> Int {
-        guard steps.count > currentIndex + 1 else { return -1 }
+        guard steps.count > currentIndex + 1 else {
+            didFinishOnboarding?()
+            return -1
+        }
         setViewControllers([steps[currentIndex + 1]], direction: .forward, animated: false)
         currentIndex = currentIndex + 1
         return currentIndex
