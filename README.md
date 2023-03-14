@@ -1,19 +1,18 @@
 #  Todo list
 
-- Adjust styling of onboarding
-- Features from onboarding
-- Onboarding / UserDefaults     -     DOING
-- Review match view cell on live game
+- Features from onboarding (Personalized UX)
+- MatchOverviewView
+- Adapt match view cell for ALL match states
+- Add content to onboarding
 
 Details:
 
-- Sync walkthrough progress view
-- Create halftime status view for MatchTableViewCell
 - Update view when matches status change
 - Embed API token-key into env variables
 
 ## Last things done
 
+- Onboarding; still skeleton
 - Get matches from day
 - Fix DayPickerController
 - Create a DayPickerController, but still fixes
@@ -26,6 +25,7 @@ Details:
 
 ## Items to review
 
+- Onboarding view controllers
 - DayPicker component
 - *Networking layer*
 - Error handling

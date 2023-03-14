@@ -1,6 +1,6 @@
 import Foundation
 
-struct League: Identifiable, Decodable, Hashable, Item {
+struct League: Identifiable, Codable, Hashable, Item {
     let id: Int
     let name: String
 //    let country: String

@@ -9,7 +9,11 @@ import UIKit
 
 class OnboardingContainerViewController: UIViewController {
     static private let numSteps = 3
-    var didFinishOnboarding: (() -> Void)?
+
+    private var country: Country? = nil
+    private var club: Team? = nil
+
+    var didFinishOnboarding: ((UserSession) -> Void)?
 
     // MARK: - Childs
     private lazy var onboardingPageViewController: OnboardingPageViewController = .init()
@@ -28,19 +32,21 @@ class OnboardingContainerViewController: UIViewController {
         onboardingButtonsViewController.view.translatesAutoresizingMaskIntoConstraints = false
         
         setupConstraints()
+
         view.backgroundColor = .systemBackground
+
         onboardingButtonsViewController.previousButton.hide()
-        
         onboardingButtonsViewController.delegate = self
-        setupUserSession()
+
+        configureCallbacks()
     }
 
-    private func setupUserSession() {
+    private func configureCallbacks() {
         if let support = onboardingPageViewController.steps.first(where: { $0.type == StepType.support }) as? SupportStepViewController {
-            support.didUpdateSelections = { country, team in
-                UserSession.shared.club = team
-                UserSession.shared.nationality = country
-                if country != nil && team != nil {
+            support.didUpdateSelections = { country, club in
+                self.club = club
+                self.country = country
+                if country != nil && club != nil {
                     self.onboardingButtonsViewController.continueButton.enable()
                 } else {
                     self.onboardingButtonsViewController.continueButton.disable()
@@ -49,8 +55,7 @@ class OnboardingContainerViewController: UIViewController {
         }
         
         onboardingPageViewController.didFinishOnboarding = {
-            UserSession.shared.isUserDefined = true
-            self.didFinishOnboarding?()
+            self.didFinishOnboarding?(.init(club: self.club!, nationality: self.country!))
         }
     }
     
@@ -100,7 +105,7 @@ extension OnboardingContainerViewController: OnboardingButtonsViewControllerDele
             onboardingButtonsViewController.continueButton.enable()
         case .support:
             onboardingButtonsViewController.previousButton.show()
-            if UserSession.shared.nationality == nil || UserSession.shared.club == nil {
+            if country == nil || club == nil {
                 onboardingButtonsViewController.continueButton.disable()
             } else {
                 onboardingButtonsViewController.continueButton.enable()

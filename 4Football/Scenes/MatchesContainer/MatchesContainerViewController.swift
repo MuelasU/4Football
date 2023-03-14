@@ -5,6 +5,7 @@ class MatchesContainerViewController: UIViewController {
     
     // MARK: - Data
     private var displayedDay: Date
+    private let userSession: UserSession
     
     private lazy var selectedDayChanged: (Date, AnyObject) -> Void =  { newDay, sender in
         self.displayedDay = newDay
@@ -38,8 +39,9 @@ class MatchesContainerViewController: UIViewController {
     }
     
     // MARK: - Init
-    init(firstDay displayedDay: Date = .now) {
+    init(userSession: UserSession, firstDay displayedDay: Date = .now) {
         self.displayedDay = displayedDay
+        self.userSession = userSession
         super.init(nibName: nil, bundle: nil)
     }
     
