@@ -27,22 +27,24 @@ class SupportStepViewController: UIViewController, OnboardingStep {
         }
     }
 
-    var didFinishSelections: ((Country, Team) -> Void)?
+    var didUpdateSelections: ((Country?, Team?) -> Void)?
 
-    private var selectedCountry: Country? = nil {
+    private(set) var selectedCountry: Country? = nil {
         didSet {
             if let selectedCountry {
+                selectedTeam = nil
                 countryPicker.picked = selectedCountry
                 getTeams(from: selectedCountry)
+                didUpdateSelections?(selectedCountry, selectedTeam)
             }
         }
     }
 
-    private var selectedTeam: Team? = nil {
+    private(set) var selectedTeam: Team? = nil {
         didSet {
             if let selectedTeam {
                 teamPicker.picked = selectedTeam
-                didFinishSelections?(selectedCountry!, selectedTeam)
+                didUpdateSelections?(selectedCountry, selectedTeam)
             }
         }
     }

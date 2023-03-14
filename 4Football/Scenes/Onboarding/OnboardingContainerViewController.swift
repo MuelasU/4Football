@@ -37,12 +37,17 @@ class OnboardingContainerViewController: UIViewController {
 
     private func setupUserSession() {
         if let support = onboardingPageViewController.steps.first(where: { $0.type == StepType.support }) as? SupportStepViewController {
-            support.didFinishSelections = { country, team in
+            support.didUpdateSelections = { country, team in
                 UserSession.shared.club = team
                 UserSession.shared.nationality = country
-                self.onboardingButtonsViewController.continueButton.enable()
+                if country != nil && team != nil {
+                    self.onboardingButtonsViewController.continueButton.enable()
+                } else {
+                    self.onboardingButtonsViewController.continueButton.disable()
+                }
             }
         }
+        
         onboardingPageViewController.didFinishOnboarding = {
             UserSession.shared.isUserDefined = true
             self.didFinishOnboarding?()
@@ -95,7 +100,7 @@ extension OnboardingContainerViewController: OnboardingButtonsViewControllerDele
             onboardingButtonsViewController.continueButton.enable()
         case .support:
             onboardingButtonsViewController.previousButton.show()
-            if UserSession.shared.nationality != nil && UserSession.shared.club != nil {
+            if UserSession.shared.nationality == nil || UserSession.shared.club == nil {
                 onboardingButtonsViewController.continueButton.disable()
             } else {
                 onboardingButtonsViewController.continueButton.enable()
