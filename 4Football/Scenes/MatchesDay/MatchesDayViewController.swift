@@ -14,11 +14,12 @@ fileprivate struct Section {
 
 // gonna be the content
 class MatchesDayViewController: UIViewController {
-
     let day: Date
-    
-    init(day: Date) {
+    private let userSession: UserSession
+
+    init(day: Date, userSession: UserSession) {
         self.day = day
+        self.userSession = userSession
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -43,17 +44,8 @@ class MatchesDayViewController: UIViewController {
     private var sections = [Section]()
     
     private func getData() {
-        let season = GenericQuery(key: "season", value: "2023")
-        let league = GenericQuery(key: "league", value: "475")
-        let timezone = GenericQuery(key: "timezone", value: "America/Belem")
-        let request = GetMatches(by: [day, season, league, timezone])
-        FootballAPIClient.shared.send(request) { response in
-            switch response {
-            case .failure(let error):
-                print(error.message)
-            case .success(let matchesArray):
-                self.matches = matchesArray
-            }
+        userSession.requester.getMatches(from: day) { matchesArray in
+            self.matches = matchesArray
         }
     }
     

@@ -19,6 +19,7 @@ class MatchesContainerViewController: UIViewController {
     // MARK: - Childs
     private lazy var matchesPageViewController: MatchesPageViewController = .init(
         firstDay: displayedDay,
+        userSession: userSession,
         update: selectedDayChanged
     )
     

@@ -8,12 +8,13 @@
 import UIKit
 
 class MatchesPageViewController: UIPageViewController {
-    
+    private let userSession: UserSession
     private let updateHandler: (Date, AnyObject) -> Void
     
     // MARK: - Init
-    init(firstDay: Date, update handler: @escaping (Date, AnyObject) -> Void) {
+    init(firstDay: Date, userSession: UserSession, update handler: @escaping (Date, AnyObject) -> Void) {
         self.updateHandler = handler
+        self.userSession = userSession
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal)
         let initialViewController = createMatchesDayViewController(for: firstDay)
         setViewControllers([initialViewController], direction: .forward, animated: true, completion: nil)
@@ -32,7 +33,7 @@ class MatchesPageViewController: UIPageViewController {
     }
     
     private func createMatchesDayViewController(for date: Date) -> MatchesDayViewController {
-        return MatchesDayViewController(day: date)
+        return MatchesDayViewController(day: date, userSession: userSession)
     }
 }
 

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct Team: Identifiable, Codable, Item {
+struct Team: Identifiable, Codable, Hashable, Item {
     let id: Int
     let name: String
     let imageUrl: String?
