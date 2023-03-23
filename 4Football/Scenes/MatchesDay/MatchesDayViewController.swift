@@ -14,8 +14,17 @@ fileprivate struct Section {
 
 // gonna be the content
 class MatchesDayViewController: UIViewController {
+    enum State {
+        case loading, loaded, noMatches
+    }
+
     let day: Date
     private let userSession: UserSession
+    private var state: MatchesDayViewController.State? {
+        didSet {
+            contentView.setView(for: state ?? .loading)
+        }
+    }
 
     init(day: Date, userSession: UserSession) {
         self.day = day
@@ -28,7 +37,7 @@ class MatchesDayViewController: UIViewController {
     }
     
     // MARK: - Data
-    var matches = [Match]() {
+    private var matches = [Match]() {
         didSet {
             for match in matches {
                 if let sectionIndex = sections.firstIndex(where: { $0.league == match.league}) {
@@ -45,26 +54,31 @@ class MatchesDayViewController: UIViewController {
     
     private func getData() {
         userSession.requester.getMatches(from: day) { matchesArray in
-            self.matches = matchesArray
+            if !matchesArray.isEmpty {
+                self.matches = matchesArray
+                self.state = .loaded
+            } else {
+                self.state = .noMatches
+            }
         }
     }
     
     // MARK: - View
     var contentView: MatchesDayView = MatchesDayView()
-    
+
     override func loadView() {
         contentView.tableView.dataSource = self
         contentView.tableView.delegate = self
+        state = .loading
         view = contentView
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // QUESTION: Can it be in loadView?
+
         contentView.tableView.register(MatchTableViewCell.self, forCellReuseIdentifier: "cell")
         contentView.tableView.register(MatchesHeaderView.self, forHeaderFooterViewReuseIdentifier: "sectionHeader")
-        
+
         getData()
     }
 }

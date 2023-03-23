@@ -1,10 +1,3 @@
-//
-//  MatchesView.swift
-//  4Football
-//
-//  Created by Gabriel Muelas on 13/12/21.
-//
-
 import UIKit
 
 class MatchesDayView: UIView {
@@ -13,28 +6,55 @@ class MatchesDayView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
-        setupViews()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
 
-extension MatchesDayView: ViewCodable {
-    func buildHierarchy() {
-        addSubview(tableView)
+    private lazy var loadingIndicator: UIStackView = {
+        let view = UIActivityIndicatorView(style: .medium)
+        view.startAnimating()
+        let stack = UIStackView(arrangedSubviews: [view])
+        stack.distribution = .fill
+        stack.alignment = .center
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+
+    private lazy var noMatchesView: UIStackView = {
+        let label = UILabel()
+        label.text = "No matches for today"
+        label.textAlignment = .center
+        let stack = UIStackView(arrangedSubviews: [label])
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+
+    //MARK: - View building
+
+    func setView(for state: MatchesDayViewController.State) {
+        subviews.forEach { $0.removeFromSuperview() }
+        NSLayoutConstraint.deactivate(constraints)
+        let view: UIView = {
+            switch state {
+            case .loading:
+                return loadingIndicator
+            case .loaded:
+                return tableView
+            case .noMatches:
+                return noMatchesView
+            }
+        }()
+        addSubview(view)
+        setupConstraints(for: view)
     }
-    
-    func setupConstraints() {
+
+    private func setupConstraints(for view: UIView) {
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor)
+            view.topAnchor.constraint(equalTo: topAnchor),
+            view.bottomAnchor.constraint(equalTo: bottomAnchor),
+            view.leadingAnchor.constraint(equalTo: leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
 }
+
+
+
+
