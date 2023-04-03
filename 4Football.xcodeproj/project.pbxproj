@@ -21,6 +21,7 @@
 		3F237EFA27D8DF68004AA000 /* MatchOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F237EF927D8DF68004AA000 /* MatchOverviewViewController.swift */; };
 		3F237EFC27D8E1EB004AA000 /* MatchOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F237EFB27D8E1EB004AA000 /* MatchOverviewView.swift */; };
 		3F298B0B277A875A00D4CCF4 /* UIImageView+loadURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F298B0A277A875A00D4CCF4 /* UIImageView+loadURL.swift */; };
+		3F2E294529CD26D900218829 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2E294429CD26D900218829 /* ScoreView.swift */; };
 		3F3AF6522767E66C005129CF /* MatchesContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AF6512767E66C005129CF /* MatchesContainerViewController.swift */; };
 		3F3AF6542767EDE0005129CF /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AF6532767EDE0005129CF /* ViewCode.swift */; };
 		3F3AF6562767F1B7005129CF /* MatchesDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3AF6552767F1B7005129CF /* MatchesDayView.swift */; };
@@ -82,6 +83,7 @@
 		3F237EF927D8DF68004AA000 /* MatchOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOverviewViewController.swift; sourceTree = "<group>"; };
 		3F237EFB27D8E1EB004AA000 /* MatchOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOverviewView.swift; sourceTree = "<group>"; };
 		3F298B0A277A875A00D4CCF4 /* UIImageView+loadURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadURL.swift"; sourceTree = "<group>"; };
+		3F2E294429CD26D900218829 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		3F3AF6512767E66C005129CF /* MatchesContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesContainerViewController.swift; sourceTree = "<group>"; };
 		3F3AF6532767EDE0005129CF /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		3F3AF6552767F1B7005129CF /* MatchesDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesDayView.swift; sourceTree = "<group>"; };
@@ -152,6 +154,14 @@
 			);
 			name = TableView;
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3F2E294329CD26BF00218829 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				3F2E294429CD26D900218829 /* ScoreView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		3F4DDAE028D66E7E001E7872 /* Selection */ = {
@@ -263,6 +273,7 @@
 		3FB6FBD0284F7C2100E1FA87 /* MatchOverview */ = {
 			isa = PBXGroup;
 			children = (
+				3F2E294329CD26BF00218829 /* Subviews */,
 				3F237EFB27D8E1EB004AA000 /* MatchOverviewView.swift */,
 				3F237EF927D8DF68004AA000 /* MatchOverviewViewController.swift */,
 			);
@@ -470,6 +481,7 @@
 				3F4DDAE228D66E92001E7872 /* SelectionView.swift in Sources */,
 				3F0AC2E628D543D40061BC3B /* SelectionViewController.swift in Sources */,
 				3FCE4DB027D9817400449A3E /* Date.swift in Sources */,
+				3F2E294529CD26D900218829 /* ScoreView.swift in Sources */,
 				3FB6FBD7284F892E00E1FA87 /* Query.swift in Sources */,
 				3F07A4F929B6638700DEDD65 /* GetTeams.swift in Sources */,
 				3FCE4DAE27D9758F00449A3E /* MatchesDayViewController.swift in Sources */,

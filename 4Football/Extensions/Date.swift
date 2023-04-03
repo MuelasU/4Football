@@ -35,6 +35,12 @@ extension Date {
         dateFormatter.dateFormat = "d"
         return dateFormatter.string(from: self)
     }
+
+    var timeOfTheDay: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        return dateFormatter.string(from: self)
+    }
     
     func isSameDay(to day: Date) -> Bool {
         let otherDay = Calendar.current.dateComponents([.day], from: self)

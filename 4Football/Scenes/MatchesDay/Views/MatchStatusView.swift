@@ -11,7 +11,7 @@ class MatchStatusView: UIStackView {
             case .notStarted:
                 label.font = .preferredFont(forTextStyle: .headline)
                 label.textColor = .label
-                label.text = getTimeString(from: matchInfo.date)
+                label.text = matchInfo.date.timeOfTheDay
             case .finished:
                 label.font = .preferredFont(forTextStyle: .subheadline)
                 label.textColor = .secondaryLabel
@@ -40,12 +40,6 @@ class MatchStatusView: UIStackView {
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func getTimeString(from date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        return formatter.string(from: date)
     }
 }
 

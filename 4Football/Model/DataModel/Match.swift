@@ -24,9 +24,10 @@ struct MatchInfo: Decodable, Identifiable {
     let status: MatchState
     let date: Date
     let time: Int?
+    let referee: String?
     
     enum CodingKeys: String, CodingKey {
-        case id, status, date
+        case id, status, date, referee
     }
     
     enum StatusCodingKeys: String, CodingKey {
@@ -37,6 +38,7 @@ struct MatchInfo: Decodable, Identifiable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(Int.self, forKey: .id)
         date = try container.decode(Date.self, forKey: .date)
+        referee = try container.decode(String?.self, forKey: .referee)
         let statusContainer = try container.nestedContainer(keyedBy: StatusCodingKeys.self, forKey: .status)
         status = try statusContainer.decode(MatchState.self, forKey: .short)
         time = try statusContainer.decode(Int?.self, forKey: .elapsed)

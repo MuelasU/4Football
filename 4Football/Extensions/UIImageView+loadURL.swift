@@ -9,6 +9,8 @@ import UIKit
 
 extension UIImage {
     static let cache = NSCache<NSString, UIImage>()
+
+    static let crest: UIImage! = .init(named: "brasao")
 }
 
 extension UIImageView {
